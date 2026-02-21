@@ -1,10 +1,12 @@
+import "dotenv/config";
 import express from "express";
 import type { Request, Response } from "express";
 import progettiRoutes from "./routes/progetti.js";
 import certificazioniRoutes from "./routes/certificazioni.js";
 
 const app = express();
-const port = process.env.PORT
+const port = process.env.PORT 
+
 
 app.use(express.json());
 
