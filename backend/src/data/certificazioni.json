@@ -1,0 +1,4 @@
+[
+  { "id": 1, "nome": "Certificazione 1", "ente": "Ente 1", "data": "2023-01-15" },
+  { "id": 2, "nome": "Certificazione 2", "ente": "Ente 2", "data": "2023-06-20" }
+]
