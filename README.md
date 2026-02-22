@@ -25,8 +25,15 @@ Progetto full-stack per il portfolio di Umberto.
 
 ### Tecnologie
 
-_(Da implementare)_
+- **TypeScript**: Superset di JavaScript con tipizzazione statica
+- **React**: Libreria per la creazione di interfacce utente
+- **Tailwind CSS**: Framework utility-first per lo styling
 
 ### Dipendenze
 
-_(Da implementare)_
+**Produzione:**
+
+- `react` (^18.x): Libreria per UI
+- `react-dom` (^18.x): Rendering React nel DOM
+- `typescript` (^5.x): Tipizzazione statica per JavaScript
+- `tailwindcss` (^3.x): Utility CSS per lo styling
