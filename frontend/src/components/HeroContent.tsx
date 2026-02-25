@@ -1,3 +1,5 @@
+import { FileUser } from "lucide-react";
+import { Link } from "react-router-dom";
 import IconsHero from "./IconsHero";
 
 export default function HeroContent() {
@@ -12,7 +14,7 @@ export default function HeroContent() {
                   src="/image.png"
                   alt="profile image"
                   className="w-full h-full object-cover"
-                  />
+                />
               </div>
             </div>
             <div className="absolute -bottom-2 -right-2 w-10 h-10 bg-violet-500 rounded-full flex items-center justify-center border-4 border-slate-950">
@@ -29,18 +31,19 @@ export default function HeroContent() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-10">
-            <a
-              href="#"
+            <Link
+              to="/profilo"
               className="px-8 py-3 bg-violet-500 hover:bg-violet-600 text-white rounded-lg font-medium transition-all shadow-md shadow-violet-600/20 hover:scale-105"
             >
-              Vedi i miei progetti
-            </a>
+              Profilo personale
+            </Link>
             <a
               href="/Curriculum.pdf"
               download="Umberto_Carbone_CV.pdf"
-              className="px-8 py-3 bg-slate-800/80 backdrop-blur-sm hover:bg-slate-700 text-white rounded-lg font-medium transition-all border border-slate-700 hover:border-violet-500/30"
+              className="px-8 py-3 bg-white/5 backdrop-blur-md hover:bg-white/10 text-white rounded-lg font-medium transition-all border border-white/10 hover:border-violet-500/50 shadow-xl flex items-center gap-2"
             >
               Download CV
+              <FileUser size={20} className="text-violet-400" />
             </a>
           </div>
 

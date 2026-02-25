@@ -36,7 +36,7 @@ export default function IconsHero() {
           className="relative w-12 h-12 rounded-full flex items-center justify-center hover:scale-125 transition-all"
           aria-label={label}
         >
-          <span className="absolute inset-0 rounded-full animate-spin violet-gradient-spin"/>
+          <span className="absolute inset-0 rounded-full animate-spin violet-gradient-spin" />
           <span className="relative w-11 h-11 rounded-full bg-slate-900 flex items-center justify-center text-slate-300 hover:text-violet-400 transition-colors">
             <Icon size={20} />
           </span>

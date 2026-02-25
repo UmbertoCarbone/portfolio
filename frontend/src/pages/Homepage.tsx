@@ -1,7 +1,7 @@
-import Lightning from "../components/Lightning";
-import PauseFrameButton from "../components/PauseFrameButton";
-import HeroContent from "../components/HeroContent";
 import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
+import Lightning from "../components/Lightning";
+import HeroContent from "../components/HeroContent";
 
 function useXOffset() {
   const [xOffset, setXOffset] = useState(0);
@@ -27,27 +27,21 @@ function useXOffset() {
 
 export default function Homepage() {
   const xOffset = useXOffset();
-  const [isPaused, setIsPaused] = useState(false);
+  const { isPaused } = useOutletContext<{ isPaused: boolean }>();
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-slate-950 flex items-center">
-      {/* 1. BOTTONE PAUSA */}
-      <PauseFrameButton isPaused={isPaused} onToggle={() => setIsPaused(!isPaused)} />
-
-      {/* 2. LIGHTNING BACKGROUND */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Lightning
-          key={isPaused ? "paused" : "playing"}
-          hue={260}
-          xOffset={xOffset}
-          speed={isPaused ? 0 : 0.8}
-          intensity={1}
-          size={1}
-        />
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Lightning
+            key={isPaused ? "paused" : "playing"}
+            hue={260}
+            xOffset={xOffset}
+            speed={isPaused ? 0 : 0.8}
+            intensity={1}
+            size={1}
+          />
+        </div>
+        <HeroContent />
       </div>
-
-      {/* 3. CONTENUTO HERO */}
-      <HeroContent />
-    </div>
   );
 }
