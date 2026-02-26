@@ -1,13 +1,28 @@
 @import "tailwindcss";
 
 
+:root {
+    --bg-primary: #121212;
+    --bg-secondary: #1E1E1E;
+    --bg-tertiary: #2A2A2A;
+    --text-primary: #EAEAEA;
+    --text-secondary: #CCCCCC;
+    --text-muted: #999999;
+    --accent-primary: #A0A0A0;
+    --accent-secondary: #4a5568;
+    --accent-gradient: linear-gradient(135deg, #BDBDBD 0%, #A0A0A0 100%);
+    --color-success: #4ade80;
+    --color-error: #ef4444;
+    --color-warning: #f59e0b;
+    --border-color: #333333;
+}
 /* Spinner */
 .violet-gradient-spin {
     background: linear-gradient(0deg, #6d28d9 0%, #191232 85%, #fff 100%);
-    animation:cubic-bezier(0.47, 0, 0.745, 0.715) forwards spin 1.8s infinite;
+    animation: cubic-bezier(0.47, 0, 0.745, 0.715) forwards spin 1.8s infinite;
 }
 
 .spin-photo {
-    background: linear-gradient(220deg, #6d28d9 0%, #312461 85%, #fff 100%);
-    
+    background: linear-gradient(220deg, #bda7ff 0%, #7c3aed 50%, #312e81 100%);
+    animation: spin 2s linear infinite;
 }
