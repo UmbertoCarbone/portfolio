@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import Lightning from "../components/Lightning";
+import Lightning from "../lib/Lightning";
 import HeroContent from "../components/HeroContent";
 
 function useXOffset() {

@@ -7,4 +7,7 @@
     animation:cubic-bezier(0.47, 0, 0.745, 0.715) forwards spin 1.8s infinite;
 }
 
-
+.spin-photo {
+    background: linear-gradient(220deg, #6d28d9 0%, #312461 85%, #fff 100%);
+    
+}
