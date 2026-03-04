@@ -9,7 +9,7 @@ export default function Section_AboutMe() {
       </div>
 
       {/* Contenuto: testo + foto */}
-      <div className="mt-12 flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-4">
+      <div className=" flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-4">
         {/* Testo */}
         <div className="backdrop-blur-xl text-lg leading-relaxed bg-neutral-900/80 border-2 border-gray-300/10 rounded-xl px-4 py-3 transition-colors duration-300 hover:border-white/60 flex-1 lg:w-3/4">
           <p className="leading-relaxed py-6">
@@ -25,7 +25,7 @@ export default function Section_AboutMe() {
         <img
           src="/fotoprofilo.PNG"
           alt="Foto profilo"
-          className="w-full max-w-sm mx-auto lg:mx-0 rounded-xl object-cover h-64 lg:h-auto lg:w-12 flex-1"
+          className="w-full max-w-md mx-auto lg:mx-0 rounded-xl  h-80 lg:h-auto lg:w-12 flex-1"
         />
       </div>
     </section>

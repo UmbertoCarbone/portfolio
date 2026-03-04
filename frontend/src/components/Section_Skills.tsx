@@ -2,7 +2,7 @@ export default function Section_Skills() {
   const icons = [
     { class: "devicon-html5-plain", label: "HTML" },
     { class: "devicon-css3-plain", label: "CSS" },
-    { class: "devicon-javascript-plain", label: "JS" },
+    { class: "devicon-javascript-plain", label: "JavaScript" },
     { class: "devicon-bootstrap-plain", label: "Bootstrap" },
     { class: "devicon-react-original", label: "React" },
     { class: "devicon-express-original", label: "Express" },
@@ -12,7 +12,7 @@ export default function Section_Skills() {
     { class: "devicon-supabase-plain", label: "Supabase" },
     { class: "devicon-vuejs-plain", label: "Vue.js" },
     { class: "devicon-tailwindcss-plain", label: "Tailwind" },
-    { class: "devicon-typescript-plain", label: "TS" },
+    { class: "devicon-typescript-plain", label: "TypeScrip" },
     { class: "devicon-jest-plain", label: "Jest" },
     { class: "devicon-git-plain", label: "GitHub" },
   ];
@@ -22,14 +22,13 @@ export default function Section_Skills() {
 
   const renderIconGroup = (row: { class: string; label: string }[]) => (
     <div className="flex w-max">
-      {[...row, ...row].map((icon, idx) => (
+      {[...row, ...row].map((icon, index) => (
         <div
-          key={idx}
-          className="flex flex-col items-center justify-center shrink-0 text-5xl md:text-6xl
-                     w-[25vw] sm:w-[16.66vw] lg:w-[12.5vw]"
+          key={index}
+          className="flex flex-col items-center justify-center shrink-0 text-5xl md:text-6xl w-[25vw] sm:w-[16.66vw] lg:w-[12.5vw]"
         >
           <i className={`${icon.class} colored`}></i>
-          <span className="mt-2 text-sm md:text-lg font-space text-white/70">
+          <span className="mt-2 text-sm md:text-lg text-space-grotesk text-white/70">
             {icon.label}
           </span>
         </div>
@@ -39,36 +38,40 @@ export default function Section_Skills() {
 
   return (
     <>
-      
       {/* Titolo centrato */}
-    <section className="mx-auto max-w-6xl pt-24  text-space-grotesk">
-      <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-12">
-        <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
-          My <span className="text-gradient-violet">Skills</span>
-        </h2>
-      </div>
-    </section>
-
-    {/* Linea bianca a tutta larghezza */}
-    <div className="w-full border-t-2 border-white/10"></div>
-
-    {/* Sezione skills centrata */}
-    <section className="mx-auto max-w-6xl pb-24 text-space-grotesk">
-      <div className="relative py-16 bg-ink overflow-hidden">
-        {/* Effetto sfumato ai lati */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-ink to-transparent"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-ink to-transparent"></div>
-        {/* Prima riga di icone */}
-        <div className="mb-12 flex overflow-hidden">
-          <div className="animate-loop-left">{renderIconGroup(firstRow)}</div>
+      <section className="mx-auto max-w-6xl pt-24  text-space-grotesk">
+        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-12">
+          <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
+            My <span className="text-gradient-violet">Skills</span>
+          </h2>
         </div>
-        {/* Seconda riga di icone */}
-        <div className="flex overflow-hidden">
-          <div className="animate-loop-right">{renderIconGroup(secondRow)}</div>
-        </div>
+      </section>
+      {/* Linea bianca a tutta larghezza */}
+      <div></div>
+      <div className="w-full border-t-2 border-b-2 border-gray-300/10 duration-300">
+        {/* Sezione skills centrata */}
+        <section className="mx-auto  text-space-grotesk">
+          <div className="relative py-16 bg-ink overflow-hidden">
+            {/* Effetto sfumato ai lati */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-ink to-transparent"></div>
+            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-ink to-transparent"></div>
+            {/* Prima riga di icone */}
+            <div className="mb-12 flex overflow-hidden">
+              <div className="animate-loop-left">
+                {renderIconGroup(firstRow)}
+              </div>
+            </div>
+            <div className="w-full border-t-2  border-gray-300/10 my-14"></div>
+            {/* Seconda riga di icone */}
+            <div className="flex overflow-hidden">
+              <div className="animate-loop-right">
+                {renderIconGroup(secondRow)}
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-      
+      eqweqw eqweqweqwewqe eqweqweqw
     </>
   );
 }
