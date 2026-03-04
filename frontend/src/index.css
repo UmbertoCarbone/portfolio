@@ -1,6 +1,8 @@
+/* =========================
+   Importazioni e Variabili
+   ========================= */
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Space+Grotesk&display=swap');
-
 
 :root {
     --bg-primary: #121212;
@@ -47,8 +49,9 @@
     --z-tooltip: 9999;
 }
 
-
-/* Spinner */
+/* =========================
+   Spinner & Animazioni Foto
+   ========================= */
 .violet-gradient-spin {
     background: linear-gradient(0deg, #6d28d9 0%, #191232 85%, #fff 100%);
     animation: cubic-bezier(0.47, 0, 0.745, 0.715) forwards spin 1.8s infinite;
@@ -59,16 +62,14 @@
     animation: spin 2s linear infinite;
 }
 
+/* =========================
+   Font & Testi Speciali
+   ========================= */
 .text-space-grotesk {
-
     font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-    /* */
-    color: rgba(255, 255, 255, 0.9);
-    /* Bianco al 90% come da ispezione */
+    color: rgba(255, 255, 255, 0.9); /* Bianco al 90% */
     -webkit-font-smoothing: antialiased;
-    /* */
     -moz-osx-font-smoothing: grayscale;
-    /* */
 }
 
 .text-gradient-violet {
@@ -82,46 +83,31 @@
     animation: gradient-move 1.8s ease-in-out infinite alternate;
 }
 
+/* =========================
+   Keyframes Gradienti
+   ========================= */
 @keyframes gradient-move {
-    0% {
-        background-position: 0% 0%;
-    }
-
-    100% {
-        background-position: 100% 0%;
-    }
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
 }
 
-
-/* .devicon-hover-color {
-  color: #6b7280;
-  transition: color 0.3s;
-}
-.devicon-hover-color:hover {
-  color: unset;
-}
-.devicon-hover-color.colored {
-  color: #6b7280;
-}
-.devicon-hover-color:hover.colored {
-  color: inherit;
-} */
-
-
+/* =========================
+   Keyframes e Animazioni Marquee
+   ========================= */
 @keyframes marquee-loop-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 @keyframes marquee-loop-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
 }
 
 .animate-loop-left {
-  animation: marquee-loop-left 30s linear infinite;
+    animation: marquee-loop-left 18s linear infinite;
 }
 
 .animate-loop-right {
-  animation: marquee-loop-right 30s linear infinite;
+    animation: marquee-loop-right 18s linear infinite;
 }

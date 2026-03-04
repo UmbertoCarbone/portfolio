@@ -20,14 +20,13 @@ export default function Section_Skills() {
   const firstRow = icons.slice(0, 8);
   const secondRow = icons.slice(8, 16);
 
- 
   const renderIconGroup = (row: { class: string; label: string }[]) => (
     <div className="flex w-max">
       {[...row, ...row].map((icon, idx) => (
-        <div 
-          key={idx} 
+        <div
+          key={idx}
           className="flex flex-col items-center justify-center shrink-0 text-5xl md:text-6xl
-                     w-[25vw] sm:w-[16.66vw] lg:w-[12.5vw]" 
+                     w-[25vw] sm:w-[16.66vw] lg:w-[12.5vw]"
         >
           <i className={`${icon.class} colored`}></i>
           <span className="mt-2 text-sm md:text-lg font-space text-white/70">
@@ -39,26 +38,37 @@ export default function Section_Skills() {
   );
 
   return (
-    <section className="relative border-y-2 border-white/10 py-16 bg-ink overflow-hidden">
+    <>
       
-      {/* Effetto sfumato ai lati per rendere il tutto più "premium" */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-ink to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-ink to-transparent"></div>
-
-      {/* RIGA 1: Scorrimento a sinistra */}
-      <div className="mb-12 flex overflow-hidden">
-        <div className="animate-loop-left">
-          {renderIconGroup(firstRow)}
-        </div>
+      {/* Titolo centrato */}
+    <section className="mx-auto max-w-6xl pt-24  text-space-grotesk">
+      <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-12">
+        <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
+          My <span className="text-gradient-violet">Skills</span>
+        </h2>
       </div>
-
-      {/* RIGA 2: Scorrimento a destra */}
-      <div className="flex overflow-hidden">
-        <div className="animate-loop-right">
-          {renderIconGroup(secondRow)}
-        </div>
-      </div>
-
     </section>
+
+    {/* Linea bianca a tutta larghezza */}
+    <div className="w-full border-t-2 border-white/10"></div>
+
+    {/* Sezione skills centrata */}
+    <section className="mx-auto max-w-6xl pb-24 text-space-grotesk">
+      <div className="relative py-16 bg-ink overflow-hidden">
+        {/* Effetto sfumato ai lati */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-ink to-transparent"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-ink to-transparent"></div>
+        {/* Prima riga di icone */}
+        <div className="mb-12 flex overflow-hidden">
+          <div className="animate-loop-left">{renderIconGroup(firstRow)}</div>
+        </div>
+        {/* Seconda riga di icone */}
+        <div className="flex overflow-hidden">
+          <div className="animate-loop-right">{renderIconGroup(secondRow)}</div>
+        </div>
+      </div>
+    </section>
+      
+    </>
   );
 }
