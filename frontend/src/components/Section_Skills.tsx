@@ -51,7 +51,7 @@ export default function Section_Skills() {
       <div className="w-full border-t-2 border-b-2 border-gray-300/10 duration-300">
         {/* Sezione skills centrata */}
         <section className="mx-auto  text-space-grotesk">
-          <div className="relative py-16 bg-ink overflow-hidden">
+          <div className="relative py-16  overflow-hidden">
             {/* Effetto sfumato ai lati */}
             <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-ink to-transparent"></div>
             <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-ink to-transparent"></div>

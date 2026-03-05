@@ -13,7 +13,8 @@ const filePath = path.join(__dirname, "../data/progetti.json");
 interface Progetto {
   id: number;
   title: string;
-  imgUrl: string;
+  imgUrl?: string;
+  VideoUrl?: string;
   description: string;
   technologies: string[];
   liveDemoUrl?: string;

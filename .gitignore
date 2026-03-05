@@ -39,3 +39,6 @@ Thumbs.db
 
 # Data folder
 backend/src/data/
+
+#photo
+backend/public
