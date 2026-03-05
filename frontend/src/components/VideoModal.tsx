@@ -34,7 +34,7 @@ export default function VideoModal({ url, type, alt, onClose }: MediaModalProps)
             <X size={28} />
           </button>
           {type === "video" ? (
-            <div className="w-full max-w-5xl rounded-xl  shadow-xl overflow-hidden " style={{ aspectRatio: '16/9' }}>
+            <div className="w-full max-w-5xl rounded-xl border border-white/20 shadow-xl overflow-hidden bg-white/10 backdrop-blur-sm" style={{ aspectRatio: '16/9' }}>
               <video
                 src={url}
                 controls

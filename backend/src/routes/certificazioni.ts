@@ -13,8 +13,10 @@ const filePath = path.join(__dirname, '../data/certificazioni.json');
 interface Certificazione {
   id: number;
   nome: string;
+  imgUrl: string;
   ente: string;
-  data: string;
+  data?: string;
+  descrizione?: string;
 }
 
 const leggiCertificazioni = (): Certificazione[] => {
