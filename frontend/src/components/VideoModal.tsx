@@ -17,7 +17,7 @@ export default function VideoModal({ url, type, alt, onClose }: MediaModalProps)
   }, []);
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-8"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 "
       onClick={onClose}
     >
       <div
@@ -27,19 +27,19 @@ export default function VideoModal({ url, type, alt, onClose }: MediaModalProps)
         <div className="relative">
           {/* Bottone chiusura attaccato al media */}
           <button
-            className="absolute -top-14 -right-1 bg-red-900/40 hover:bg-red-700/50 rounded-full p-2 text-white/80 hover:text-white shadow-lg z-20 transition-colors"
+            className="absolute -top-14 left-2 bg-red-900/60 hover:bg-red-700/70 rounded-full p-2 text-white/80 hover:text-white shadow-lg z-20 transition-colors"
             onClick={onClose}
             aria-label="Chiudi"
           >
             <X size={28} />
           </button>
           {type === "video" ? (
-            <div className="w-full max-w-5xl" style={{ aspectRatio: '16/9' }}>
+            <div className="w-full max-w-5xl rounded-xl  shadow-xl overflow-hidden " style={{ aspectRatio: '16/9' }}>
               <video
                 src={url}
                 controls
                 autoPlay
-                className="w-full h-full object-contain rounded-xl"
+                className="w-full h-full object-contain bg-transparent"
               />
             </div>
           ) : (
