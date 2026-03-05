@@ -1,5 +1,6 @@
 import Section_AboutMe from "../components/Section_AboutMe";
 import Section_Skills from "../components/Section_Skills";
+import Section_Project from "../components/Section_Project";
 
 
 export default function Profilo() {
@@ -10,6 +11,7 @@ export default function Profilo() {
     >
       <Section_AboutMe/>
       <Section_Skills/>
+      <Section_Project/>
     </div>
   );
 }

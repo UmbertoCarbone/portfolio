@@ -67,7 +67,7 @@
    ========================= */
 .text-space-grotesk {
     font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
-    color: rgba(255, 255, 255, 0.9); /* Bianco al 90% */
+    
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

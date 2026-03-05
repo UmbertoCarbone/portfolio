@@ -12,7 +12,7 @@ export default function Section_AboutMe() {
       <div className=" flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-4">
         {/* Testo */}
         <div className="backdrop-blur-xl text-lg leading-relaxed bg-neutral-900/80 border-2 border-gray-300/10 rounded-xl px-4 py-3 transition-colors duration-300 hover:border-white/60 flex-1 lg:w-3/4">
-          <p className="leading-relaxed py-6">
+          <p className="leading-relaxed py-6 text-white/90">
             Sviluppatore italiano con forte passione per programmazione e web
             design, cresciuto con il web fin da giovane età. Attualmente
             frequento l'ITIS G. Marconi a Verona e progetto soluzioni eleganti,

@@ -1,4 +1,5 @@
 import "dotenv/config";
+import cors from "cors"
 import express from "express";
 import type { Request, Response } from "express";
 import progettiRoutes from "./routes/progetti.js";
@@ -6,7 +7,7 @@ import certificazioniRoutes from "./routes/certificazioni.js";
 
 const app = express();
 const port = process.env.PORT
-
+app.use(cors());
 app.use(express.json());
 
 app.use("/api/progetti", progettiRoutes);

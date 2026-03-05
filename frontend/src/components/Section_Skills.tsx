@@ -12,7 +12,7 @@ export default function Section_Skills() {
     { class: "devicon-supabase-plain", label: "Supabase" },
     { class: "devicon-vuejs-plain", label: "Vue.js" },
     { class: "devicon-tailwindcss-plain", label: "Tailwind" },
-    { class: "devicon-typescript-plain", label: "TypeScrip" },
+    { class: "devicon-typescript-plain", label: "TypeScript" },
     { class: "devicon-jest-plain", label: "Jest" },
     { class: "devicon-git-plain", label: "GitHub" },
   ];
@@ -39,7 +39,7 @@ export default function Section_Skills() {
   return (
     <>
       {/* Titolo centrato */}
-      <section className="mx-auto max-w-6xl pt-24  text-space-grotesk">
+      <section className="mx-auto max-w-6xl pt-10  text-space-grotesk">
         <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-12">
           <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
             My <span className="text-gradient-violet">Skills</span>
@@ -71,7 +71,7 @@ export default function Section_Skills() {
           </div>
         </section>
       </div>
-      eqweqw eqweqweqwewqe eqweqweqw
+      
     </>
   );
 }

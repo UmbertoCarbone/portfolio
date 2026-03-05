@@ -18,6 +18,7 @@ interface Progetto {
   technologies: string[];
   liveDemoUrl?: string;
   githubUrl?: string;
+  download?: string;
 }
 
 const leggiProgetti = (): Progetto[] => {
