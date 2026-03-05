@@ -30,7 +30,7 @@ export default function Section_Project() {
   return (
     <section className="mx-auto max-w-7xl  text-space-grotesk">
       {/* Intestazione Sezione */}
-      <div className="mb-16">
+      <div className="mb-18 mt-24 ">
         <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
           My <span className="text-gradient-violet">Projects</span>
         </h2>
@@ -42,7 +42,7 @@ export default function Section_Project() {
         {progetti.map((progetto) => (
           <div
             key={progetto.id}
-            className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 hover:-translate-y-2"
+className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer group"
           >
             {/* Immagine Progetto */}
             <div className="relative h-64 overflow-hidden flex items-center justify-center">

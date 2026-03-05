@@ -11,7 +11,7 @@ export default function MainLayout() {
     { to: "/", label: "Home" },
     { to: "/profilo", label: "Profilo" },
     { to: "/progetti", label: "Progetti" },
-    { to: "/contatti", label: "Contatti" },
+    { to: "/Certificazioni", label: "Certificazioni" },
   ];
 
   const navLinkClass =
@@ -30,7 +30,7 @@ export default function MainLayout() {
       >
         <div className="bg-white/5 backdrop-blur-lg border border-white/10 px-3 md:px-6 py-2 md:py-3 rounded-2xl  flex items-center justify-between">
           {/* Emoji a sinistra */}
-          <span className="text-2xl select-none">⚡</span>
+          <span></span>
 
           {/* Link al centro */}
           <div className="flex gap-3 md:gap-6">

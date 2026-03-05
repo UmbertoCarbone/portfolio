@@ -27,7 +27,7 @@ export default function Section_Certifications() {
     <>
       <section className="mx-auto max-w-7xl pt-10 text-space-grotesk">
         {/* Titolo sezione */}
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-12">
+        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-12 mt-24">
           <div>
             <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
               My <span className="text-gradient-violet">Certifications</span>
@@ -41,7 +41,7 @@ export default function Section_Certifications() {
           {certificazioni.map((cert) => (
             <div
               key={cert.id}
-              className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/40 hover:-translate-y-2 transition-all duration-500 cursor-pointer group"
+              className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer group"
               onClick={() =>
                 cert.imgUrl
                   ? setModalImg({ url: `${backendUrl}${cert.imgUrl}`, alt: cert.nome })

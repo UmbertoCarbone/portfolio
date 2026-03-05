@@ -7,7 +7,7 @@ import Section_Certifications from "../components/Section_Certifications";
 export default function Profilo() {
   return (
     <div
-      className="min-h-screen w-full px-6 pt-32"
+      className="min-h-screen w-full px-2 pt-32"
       style={{ backgroundColor: "var(--bg-primary)" }}
     >
       <Section_AboutMe/>
