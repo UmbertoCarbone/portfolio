@@ -14,8 +14,6 @@ interface Progetto {
   download?: string;
 }
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
 export default function Section_Project() {
   const [progetti, setProgetti] = useState<Progetto[]>([]);
   const [modalMedia, setModalMedia] = useState<{
@@ -25,7 +23,7 @@ export default function Section_Project() {
   } | null>(null);
 
   useEffect(() => {
-    fetch(`${backendUrl}/api/progetti`)
+    fetch("/data/progetti.json")
       .then((res) => res.json())
       .then((data: Progetto[]) => setProgetti(data))
       .catch(console.error);
@@ -52,12 +50,12 @@ export default function Section_Project() {
               {progetto.imgUrl ? (
                 <>
                   <img
-                    src={`${backendUrl}${progetto.imgUrl}`}
+                    src={progetto.imgUrl}
                     alt={progetto.title}
                     className="w-full h-full object-cover cursor-zoom-in"
                     onClick={() =>
                       setModalMedia({
-                        url: `${backendUrl}${progetto.imgUrl}`,
+                        url: progetto.imgUrl,
                         type: "image",
                         alt: progetto.title,
                       })
@@ -68,7 +66,7 @@ export default function Section_Project() {
                       className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10"
                       onClick={() =>
                         setModalMedia({
-                          url: `${backendUrl}${progetto.VideoUrl}`,
+                          url: progetto.VideoUrl!,
                           type: "video",
                         })
                       }
@@ -87,7 +85,7 @@ export default function Section_Project() {
                 </>
               ) : progetto.VideoUrl ? (
                 <video
-                  src={`${backendUrl}${progetto.VideoUrl}`}
+                  src={progetto.VideoUrl}
                   controls
                   className="w-full h-full object-cover"
                 />

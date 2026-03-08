@@ -10,14 +10,12 @@ interface Certificazione {
   imgUrl?: string;
 }
 
-const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
 export default function Section_Certifications() {
   const [certificazioni, setCertificazioni] = useState<Certificazione[]>([]);
   const [modalImg, setModalImg] = useState<{ url: string; alt: string } | null>(null);
 
   useEffect(() => {
-    fetch(`${backendUrl}/api/certificazioni`)
+    fetch("/data/certificazioni.json")
       .then((res) => res.json())
       .then((data: Certificazione[]) => setCertificazioni(data))
       .catch(console.error);
@@ -41,7 +39,7 @@ export default function Section_Certifications() {
               className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer group"
               onClick={() =>
                 cert.imgUrl
-                  ? setModalImg({ url: `${backendUrl}${cert.imgUrl}`, alt: cert.nome })
+                  ? setModalImg({ url: cert.imgUrl, alt: cert.nome })
                   : undefined
               }
             >
@@ -49,7 +47,7 @@ export default function Section_Certifications() {
               <div className="relative h-48 overflow-hidden flex items-center justify-center bg-white/5">
                 {cert.imgUrl ? (
                   <img
-                    src={`${backendUrl}${cert.imgUrl}`}
+                    src={cert.imgUrl}
                     alt={cert.nome}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
