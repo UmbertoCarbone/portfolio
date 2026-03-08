@@ -41,6 +41,6 @@ Thumbs.db
 backend/src/data/
 
 #photo
-backend/public
+#backend/public
 .vercel
 .env*.local
