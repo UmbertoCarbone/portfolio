@@ -42,3 +42,5 @@ backend/src/data/
 
 #photo
 backend/public
+.vercel
+.env*.local
