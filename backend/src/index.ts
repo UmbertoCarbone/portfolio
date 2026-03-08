@@ -14,10 +14,8 @@ import certificazioniRoutes from "./routes/certificazioni.js";
 const app = express();
 // Porta su cui ascoltare (presa da variabile d'ambiente)
 const port = process.env.PORT || 3001
-// Abilita CORS per tutte le origini (API pubblica)
+// Abilita CORS per tutte le origini - gestisce automaticamente anche le preflight OPTIONS
 app.use(cors());
-// Gestisce preflight OPTIONS - Express 5 richiede pattern esplicito invece di "*"
-app.options("/{*path}", cors());
 // Abilita il parsing del body JSON nelle richieste
 app.use(express.json());
 // Serve la cartella "public" e tutte le sue sottocartelle come file statici
