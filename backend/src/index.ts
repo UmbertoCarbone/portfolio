@@ -16,7 +16,8 @@ const app = express();
 const port = process.env.PORT || 3001
 // Abilita CORS per tutte le origini (API pubblica)
 app.use(cors());
-app.options("*", cors());
+// Gestisce preflight OPTIONS - Express 5 richiede pattern esplicito invece di "*"
+app.options("/{*path}", cors());
 // Abilita il parsing del body JSON nelle richieste
 app.use(express.json());
 // Serve la cartella "public" e tutte le sue sottocartelle come file statici
