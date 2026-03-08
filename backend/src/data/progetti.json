@@ -1,0 +1,45 @@
+[
+  {
+    "id": 1,
+    "title": "Ludos Cafe – Menu Digitale",
+    "imgUrl": "/projects/ludoscafe.png",
+    "description": "Un sito vetrina responsive ed elegante realizzato per migliorare la presenza online del locale, facilitando la consultazione del menu digitale.",
+    "technologies": ["html5", "javascript", "tailwindcss"],
+    "liveDemoUrl": "https://ludoscafe.vercel.app/",
+    "githubUrl": "https://github.com/UmbertoCarbone/bar-ludos"
+  },
+  {
+    "id": 2,
+    "title": "Discord Role Manager",
+    "imgUrl": "/projects/AuralisBot.png",
+    "description": "Bot automatizzato che permette agli utenti di assegnarsi ruoli tramite pulsanti, ottimizzando l'organizzazione e la gestione dei permessi nei server.",
+    "technologies": ["python"],
+    "githubUrl": "https://github.com/UmbertoCarbone/bot_discord_role"
+  },
+  {
+    "id": 3,
+    "title": "AI Discord Chatbot (Ollama)",
+    "imgUrl": "/projects/DiscorChatBot.png",
+    "description": "Integrazione di intelligenza artificiale locale su Discord tramite Ollama, offrendo un assistente virtuale privato senza dipendere da API esterne.",
+    "technologies": ["javascript", "nodejs"],
+    "githubUrl": "https://github.com/UmbertoCarbone/umberto-ia"
+  },
+  {
+    "id": 4,
+    "title": "CloudGames E-commerce",
+    "imgUrl": "/projects/CloudGames.png",
+    "VideoUrl": "/projects/CloudGames.mp4",
+    "description": "Piattaforma e-commerce completa per la vendita di videogiochi, dotata di sistema di autenticazione, gestione carrello e database relazionale MySQL.",
+    "technologies": ["nodejs", "mysql", "react"],
+    "githubUrl": "https://github.com/LucaCiani/CloudGames"
+  },
+  {
+    "id": 5,
+    "title": "Python SpeedTest Tool",
+    "imgUrl": "/projects/SpeedTestApp.png",
+    "description": "Applicazione desktop performante per il monitoraggio della connettività di rete, fornendo dati precisi su latenza e larghezza di banda in tempo reale.",
+    "technologies": ["python"],
+    "githubUrl": "https://github.com/UmbertoCarbone/SpeedTestAPP",
+    "download": "https://github.com/UmbertoCarbone/SpeedTestAPP/releases/tag/SpeedTestApp-1.0.1"
+  }
+]

@@ -37,8 +37,6 @@ Thumbs.db
 *.tmp
 .cache/
 
-# Data folder
-backend/src/data/
 
 #photo
 backend/public
