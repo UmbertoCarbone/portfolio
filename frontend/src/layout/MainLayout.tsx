@@ -10,8 +10,8 @@ export default function MainLayout() {
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/profilo", label: "Profilo" },
-    { to: "/progetti", label: "Progetti" },
-    { to: "/Certificazioni", label: "Certificazioni" },
+    /* { to: "/progetti", label: "Progetti" },
+    { to: "/Certificazioni", label: "Certificazioni" }, */
   ];
 
   const navLinkClass =
