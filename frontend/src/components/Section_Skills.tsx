@@ -39,9 +39,9 @@ export default function Section_Skills() {
   return (
     <>
       {/* Titolo centrato */}
-      <section className="mx-auto max-w-6xl pt-10  text-space-grotesk">
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-12">
-          <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
+      <section className="w-full mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between">
+          <h2 className="text-7xl font-semibold lg:pb-6 pb-24 leading-none tracking-tight text-white/50">
             My <span className="text-gradient-violet">Skills</span>
           </h2>
         </div>

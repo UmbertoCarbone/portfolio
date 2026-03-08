@@ -25,15 +25,12 @@ export default function Section_Certifications() {
 
   return (
     <>
-      <section className="mx-auto max-w-7xl pt-10 text-space-grotesk">
+      <section className="w-full mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
         {/* Titolo sezione */}
-        <div className="flex flex-col gap-10 md:flex-row md:items-end md:justify-between mb-12 mt-24">
-          <div>
-            <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
-              My <span className="text-gradient-violet">Certifications</span>
-            </h2>
-            <div className="h-1 w-20 bg-linear-to-r from-neon to-magenta mt-4"></div>
-          </div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between">
+          <h2 className="text-7xl font-semibold lg:pb-6 pb-24 leading-none tracking-tight text-white/50">
+            My <span className="text-gradient-violet">Certifications</span>
+          </h2>
         </div>
 
         {/* Grid card certificazioni */}
@@ -89,6 +86,7 @@ export default function Section_Certifications() {
             </div>
           ))}
         </div>
+        
       </section>
 
       {/* Modale immagine certificazione */}

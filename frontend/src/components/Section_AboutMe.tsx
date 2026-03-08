@@ -1,8 +1,8 @@
 export default function Section_AboutMe() {
   return (
-    <section className="mx-auto max-w-6xl pt-24  text-space-grotesk">
+    <section className="w-full mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
       {/* Titolo */}
-      <div className="flex flex-col  md:flex-row md:items-end md:justify-between">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between">
         <h2 className="text-7xl font-semibold lg:pb-6 pb-24 leading-none tracking-tight text-white/50">
           About <span className="text-gradient-violet">Me</span>
         </h2>

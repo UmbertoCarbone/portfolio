@@ -28,13 +28,12 @@ export default function Section_Project() {
   }, []);
 
   return (
-    <section className="mx-auto max-w-7xl  text-space-grotesk">
+    <section className="w-full mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
       {/* Intestazione Sezione */}
-      <div className="mb-18 mt-24 ">
-        <h2 className="text-5xl md:text-7xl font-semibold leading-none tracking-tight text-white/50">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between">
+        <h2 className="text-7xl font-semibold lg:pb-6 pb-24 leading-none tracking-tight text-white/50">
           My <span className="text-gradient-violet">Projects</span>
         </h2>
-        <div className="h-1 w-20 bg-linear-to-r from-neon to-magenta mt-4"></div>
       </div>
 
       {/* Grid Progetti */}

@@ -4,6 +4,8 @@ import Lightning from "../lib/Lightning";
 import HeroContent from "../components/HeroContent";
 
 function useXOffset() {
+
+  //spostare il fulmine 
   const [xOffset, setXOffset] = useState(0);
 
   useEffect(() => {
@@ -36,7 +38,7 @@ export default function Homepage() {
             key={isPaused ? "paused" : "playing"}
             hue={260}
             xOffset={xOffset}
-            speed={isPaused ? 0 : 0.8}
+            speed={isPaused ? 0 : 0.7}
             intensity={1}
             size={1}
           />
