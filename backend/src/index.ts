@@ -13,7 +13,7 @@ import certificazioniRoutes from "./routes/certificazioni.js";
 // Inizializza l'app Express
 const app = express();
 // Porta su cui ascoltare (presa da variabile d'ambiente)
-const port = process.env.PORT
+const port = process.env.PORT || 3001
 // Abilita CORS per tutte le origini
 app.use(cors());
 // Abilita il parsing del body JSON nelle richieste
