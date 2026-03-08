@@ -23,10 +23,15 @@ interface Progetto {
 }
 
 const leggiProgetti = (): Progetto[] => {
-  const data = fs.readFileSync(filePath, "utf-8");
-  return JSON.parse(data);
+  try {
+    console.log("File path:", filePath);
+    const data = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(data);
+  } catch (err) {
+    console.error("Errore lettura file:", err);
+    throw err;
+  }
 };
-
 const salvaProgetti = (progetti: Progetto[]): void => {
   fs.writeFileSync(filePath, JSON.stringify(progetti, null, 2));
 };
@@ -40,19 +45,19 @@ router.get("/", (req: Request, res: Response) => {
   }
 });
 
-router.get('/:id', (req: Request, res: Response) => {
+router.get("/:id", (req: Request, res: Response) => {
   try {
     const progetti = leggiProgetti();
-    const progetto = progetti.find(p => p.id === Number(req.params.id));
-    
+    const progetto = progetti.find((p) => p.id === Number(req.params.id));
+
     if (!progetto) {
-      res.status(404).json({ error: 'Progetto non trovato' });
+      res.status(404).json({ error: "Progetto non trovato" });
       return;
     }
-    
+
     res.json(progetto);
   } catch (err) {
-    res.status(500).json({ error: 'Errore nel caricamento' });
+    res.status(500).json({ error: "Errore nel caricamento" });
   }
 });
 
