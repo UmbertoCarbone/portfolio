@@ -39,7 +39,7 @@ Thumbs.db
 
 
 #photo
-backend/public
+
 .vercel
 .env*.local
 
