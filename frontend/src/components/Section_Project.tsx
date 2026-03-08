@@ -18,7 +18,11 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 export default function Section_Project() {
   const [progetti, setProgetti] = useState<Progetto[]>([]);
-  const [modalMedia, setModalMedia] = useState<{ url: string; type: "image" | "video"; alt?: string } | null>(null);
+  const [modalMedia, setModalMedia] = useState<{
+    url: string;
+    type: "image" | "video";
+    alt?: string;
+  } | null>(null);
 
   useEffect(() => {
     fetch(`${backendUrl}/api/progetti`)
@@ -35,15 +39,13 @@ export default function Section_Project() {
           My <span className="text-gradient-violet">Projects</span>
         </h2>
       </div>
-   
 
-   
       {/* Grid Progetti */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 px-4 md:px-8">
         {progetti.map((progetto) => (
           <div
             key={progetto.id}
-className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer group"
+            className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer group"
           >
             {/* Immagine Progetto */}
             <div className="relative h-64 overflow-hidden flex items-center justify-center">
@@ -53,17 +55,33 @@ className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl 
                     src={`${backendUrl}${progetto.imgUrl}`}
                     alt={progetto.title}
                     className="w-full h-full object-cover cursor-zoom-in"
-                    onClick={() => setModalMedia({ url: `${backendUrl}${progetto.imgUrl}`, type: "image", alt: progetto.title })}
+                    onClick={() =>
+                      setModalMedia({
+                        url: `${backendUrl}${progetto.imgUrl}`,
+                        type: "image",
+                        alt: progetto.title,
+                      })
+                    }
                   />
                   {progetto.VideoUrl && (
                     <button
                       className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10"
-                      onClick={() => setModalMedia({ url: `${backendUrl}${progetto.VideoUrl}`, type: "video" })}
+                      onClick={() =>
+                        setModalMedia({
+                          url: `${backendUrl}${progetto.VideoUrl}`,
+                          type: "video",
+                        })
+                      }
                     >
                       <div className="flex items-center justify-center w-14 h-14 rounded-full bg-white/20 border-2 border-white backdrop-blur-sm">
-                        <Play size={28} className="text-white fill-white ml-1" />
+                        <Play
+                          size={28}
+                          className="text-white fill-white ml-1"
+                        />
                       </div>
-                      <span className="text-white text-sm font-space font-semibold tracking-wide">Guarda video</span>
+                      <span className="text-white text-sm font-space font-semibold tracking-wide">
+                        Guarda video
+                      </span>
                     </button>
                   )}
                 </>
@@ -115,7 +133,9 @@ className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl 
                     <i className="devicon-github-original text-2xl"></i>
                     <span className="text-sm font-space">Link Github</span>
                   </a>
-                ) : <span />}
+                ) : (
+                  <span />
+                )}
 
                 {progetto.liveDemoUrl ? (
                   <a
@@ -127,7 +147,9 @@ className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl 
                     <Globe size={22} />
                     <span className="text-sm font-space">Sito web</span>
                   </a>
-                ) : <span />}
+                ) : (
+                  <span />
+                )}
 
                 {progetto.download ? (
                   <a
@@ -139,7 +161,9 @@ className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl 
                     <Download size={22} />
                     <span className="text-sm font-space">Download</span>
                   </a>
-                ) : <span />}
+                ) : (
+                  <span />
+                )}
               </div>
             </div>
           </div>
