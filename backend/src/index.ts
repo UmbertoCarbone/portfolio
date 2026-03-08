@@ -33,8 +33,13 @@ app.get("/", (req: Request, res: Response) => {
     res.status(500).json({ message: "Errore del server VERCEL" });
   }
 });
-// Avvia il server sulla porta specificata
-app.listen(port, () => {
-  console.log(`Server in ascolto sulla porta ${port}`);
-});
+// Avvia il server sulla porta specificata (solo in locale, non su Vercel)
+if (!process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`Server in ascolto sulla porta ${port}`);
+  });
+}
+
+// Esporta l'app per Vercel (serverless)
+export default app;
 

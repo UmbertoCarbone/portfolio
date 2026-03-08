@@ -8,7 +8,7 @@ const router = express.Router();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const filePath = path.join(__dirname, "../../data/progetti.json");
+const filePath = path.join(__dirname, "../data/progetti.json");
 
 interface Progetto {
   id: number;
