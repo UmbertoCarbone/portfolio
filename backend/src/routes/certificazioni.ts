@@ -8,7 +8,7 @@ const router = express.Router();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const filePath = path.join(__dirname, '../data/certificazioni.json');
+const filePath = path.join(process.cwd(), 'src/data/certificazioni.json');
 
 interface Certificazione {
   id: number;
