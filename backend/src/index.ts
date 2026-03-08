@@ -14,26 +14,8 @@ import certificazioniRoutes from "./routes/certificazioni.js";
 const app = express();
 // Porta su cui ascoltare (presa da variabile d'ambiente)
 const port = process.env.PORT || 3001
-// Abilita CORS per il frontend in produzione e in locale
-const allowedOrigins = [
-  "https://umbertocarbone.vercel.app",
-  "http://localhost:5173",
-];
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      // Permette anche richieste senza origin (es. Postman, curl)
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error(`CORS not allowed for origin: ${origin}`));
-      }
-    },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
-// Gestisce le richieste preflight OPTIONS
+// Abilita CORS per tutte le origini (API pubblica)
+app.use(cors());
 app.options("*", cors());
 // Abilita il parsing del body JSON nelle richieste
 app.use(express.json());

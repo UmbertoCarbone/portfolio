@@ -13,12 +13,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "src/index.ts",
-      "headers": {
-        "Access-Control-Allow-Origin": "https://umbertocarbone.vercel.app",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization"
-      }
+      "dest": "src/index.ts"
     }
   ]
 }
