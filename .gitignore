@@ -44,3 +44,8 @@ backend/src/data/
 backend/public
 .vercel
 .env*.local
+
+
+backend/.env
+frontend/.env
+frontend/.env.local
