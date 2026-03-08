@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "dev": "tsx src/index.ts",
-    "build": "tsc",
-    "postbuild": "xcopy src\\data dist\\data /E /I",
-    "start": "node dist/index.js"
-  },
+ "scripts": {
+  "dev": "tsx src/index.ts",
+  "build": "tsc && xcopy src\\data dist\\data /E /I /Y",
+  "start": "node dist/index.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
