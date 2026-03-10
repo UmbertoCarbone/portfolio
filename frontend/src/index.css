@@ -7,11 +7,13 @@
 html {
     background-color: #121212;
     min-width: 320px;
+    width: 100%;
 }
 
 body {
     background-color: #121212;
     overflow-x: hidden;
+    width: 100%;
 }
 
 :root {

@@ -54,7 +54,7 @@ export default function Section_Skills() {
           </h2>
         </div>
       </section>
-      <div className="border-t-2 border-b-2 border-gray-300/10">
+      <div className="w-full border-t-2 border-b-2 border-gray-300/10">
         {/* Sezione skills centrata */}
         <section className="text-space-grotesk">
           <div className="relative py-16 overflow-hidden">
