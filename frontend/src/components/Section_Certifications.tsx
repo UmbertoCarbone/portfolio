@@ -13,15 +13,20 @@ interface Certificazione {
 
 export default function Section_Certifications() {
   const certificazioni: Certificazione[] = certificazioniData;
-  const [modalImg, setModalImg] = useState<{ url: string; alt: string } | null>(null);
+  const [modalImg, setModalImg] = useState<{ url: string; alt: string } | null>(
+    null,
+  );
 
   return (
     <>
       <section className="mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
         {/* Titolo sezione */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50">
-            My <span className="text-gradient-violet text-4xl sm:text-5xl md:text-6xl lg:text-7xl">Certifications</span>
+          <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50">
+            My{" "}
+            <span className="text-gradient-violet text-5xl sm:text-6xl md:text-6xl lg:text-7xl">
+              Certifications
+            </span>
           </h2>
         </div>
 
@@ -53,7 +58,9 @@ export default function Section_Certifications() {
                 {/* Overlay hover con hint zoom */}
                 {cert.imgUrl && (
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <span className="text-white text-sm font-semibold tracking-wide">View certificate</span>
+                    <span className="text-white text-sm font-semibold tracking-wide">
+                      View certificate
+                    </span>
                   </div>
                 )}
                 <div className="absolute inset-0 bg-linear-to-t from-ink/80 to-transparent pointer-events-none"></div>
@@ -61,8 +68,12 @@ export default function Section_Certifications() {
 
               {/* Info certificazione */}
               <div className="flex flex-col gap-2 p-5 flex-1">
-                <h3 className="text-white font-semibold text-lg leading-tight">{cert.nome}</h3>
-                <span className="text-violet-400 text-sm font-medium">{cert.ente}</span>
+                <h3 className="text-white font-semibold text-lg leading-tight">
+                  {cert.nome}
+                </h3>
+                <span className="text-violet-400 text-sm font-medium">
+                  {cert.ente}
+                </span>
                 {cert.data && (
                   <span className="text-white/40 text-xs">
                     {new Date(cert.data).toLocaleDateString("it-IT", {
@@ -72,13 +83,14 @@ export default function Section_Certifications() {
                   </span>
                 )}
                 {cert.descrizione && (
-                  <p className="text-white/50 text-sm mt-1 leading-relaxed">{cert.descrizione}</p>
+                  <p className="text-white/50 text-sm mt-1 leading-relaxed">
+                    {cert.descrizione}
+                  </p>
                 )}
               </div>
             </div>
           ))}
         </div>
-        
       </section>
 
       {/* Modale immagine certificazione */}
