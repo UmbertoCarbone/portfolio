@@ -64,7 +64,7 @@ body {
    ========================= */
 .violet-gradient-spin {
     background: linear-gradient(0deg, #6d28d9 0%, #191232 85%, #fff 100%);
-    animation: cubic-bezier(0.47, 0, 0.745, 0.715) forwards spin 1.8s infinite;
+    animation: cubic-bezier(0.47, 0, 0.745, 0.715) forwards spin 1.3s infinite;
 }
 
 .spin-photo {
@@ -115,10 +115,10 @@ body {
 }
 
 .animate-loop-left {
-    animation: marquee-loop-left 18s linear infinite;
+    animation: marquee-loop-left 15s linear infinite;
 }
 
 .animate-loop-right {
-    animation: marquee-loop-right 18s linear infinite;
+    animation: marquee-loop-right 15s linear infinite;
 }
 

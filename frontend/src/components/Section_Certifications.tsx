@@ -65,7 +65,7 @@ export default function Section_Certifications() {
                 <span className="text-violet-400 text-sm font-medium">{cert.ente}</span>
                 {cert.data && (
                   <span className="text-white/40 text-xs">
-                    {new Date(cert.data).toLocaleDateString("en-GB", {
+                    {new Date(cert.data).toLocaleDateString("it-IT", {
                       year: "numeric",
                       month: "long",
                     })}
