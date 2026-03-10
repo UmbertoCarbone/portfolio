@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import VideoModal from "./VideoModal";
+import certificazioniData from "../data/certificazioni.json";
 
 interface Certificazione {
   id: number;
@@ -11,15 +12,8 @@ interface Certificazione {
 }
 
 export default function Section_Certifications() {
-  const [certificazioni, setCertificazioni] = useState<Certificazione[]>([]);
+  const certificazioni: Certificazione[] = certificazioniData;
   const [modalImg, setModalImg] = useState<{ url: string; alt: string } | null>(null);
-
-  useEffect(() => {
-    fetch("/data/certificazioni.json")
-      .then((res) => res.json())
-      .then((data: Certificazione[]) => setCertificazioni(data))
-      .catch(console.error);
-  }, []);
 
   return (
     <>

@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import VideoModal from "./VideoModal";
 import { Globe, Download, Play } from "lucide-react";
+import progettiData from "../data/progetti.json";
 
 interface Progetto {
   id: number;
@@ -15,19 +16,12 @@ interface Progetto {
 }
 
 export default function Section_Project() {
-  const [progetti, setProgetti] = useState<Progetto[]>([]);
+  const progetti: Progetto[] = progettiData;
   const [modalMedia, setModalMedia] = useState<{
     url: string;
     type: "image" | "video";
     alt?: string;
   } | null>(null);
-
-  useEffect(() => {
-    fetch("/data/progetti.json")
-      .then((res) => res.json())
-      .then((data: Progetto[]) => setProgetti(data))
-      .catch(console.error);
-  }, []);
 
   return (
     <section className="mx-auto max-w-7xl pt-20 px-4 text-space-grotesk">
