@@ -7,10 +7,7 @@ import Footer from "../components/Footer";
 
 export default function Profilo() {
   return (
-    <div
-      className="min-h-screen w-full px-2 pt-32"
-      style={{ backgroundColor: "var(--bg-primary)" }}
-    >
+    <div className="pt-32">
       <Section_AboutMe/>
       <Section_Skills/>
         <Section_Project/>

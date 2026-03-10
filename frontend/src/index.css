@@ -4,7 +4,12 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Space+Grotesk&display=swap');
 
-html, body {
+html {
+    background-color: #121212;
+    min-width: 320px;
+}
+
+body {
     background-color: #121212;
     overflow-x: hidden;
 }
