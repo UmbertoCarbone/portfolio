@@ -28,7 +28,7 @@ export default function MainLayout() {
         whileTap={{ scale: 0.98 }}
         className="absolute top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-2xl"
       >
-        <div className="bg-white/5 backdrop-blur-lg border border-white/10 px-3 md:px-6 py-2 md:py-3 rounded-2xl  flex items-center justify-between">
+        <div className="bg-white/5 backdrop-blur-lg border border-white/10 px-3 md:px-6 py-2 md:py-3 rounded-2xl flex items-center justify-between">
           {/* Emoji a sinistra */}
           <span></span>
 

@@ -23,10 +23,10 @@ export default function Section_Certifications() {
 
   return (
     <>
-      <section className="w-full mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
+      <section className="mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
         {/* Titolo sezione */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-          <h2 className="text-7xl font-semibold lg:pb-6 pb-24 leading-none tracking-tight text-white/50">
+          <h2 className="text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50">
             My <span className="text-gradient-violet">Certifications</span>
           </h2>
         </div>

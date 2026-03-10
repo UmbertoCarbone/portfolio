@@ -30,10 +30,10 @@ export default function Section_Project() {
   }, []);
 
   return (
-    <section className="w-full mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
+    <section className="mx-auto max-w-7xl pt-20 px-4 text-space-grotesk">
       {/* Intestazione Sezione */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-        <h2 className="text-7xl font-semibold lg:pb-6 pb-24 leading-none tracking-tight text-white/50">
+        <h2 className="text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50">
           My <span className="text-gradient-violet">Projects</span>
         </h2>
       </div>
@@ -43,7 +43,7 @@ export default function Section_Project() {
         {progetti.map((progetto) => (
           <div
             key={progetto.id}
-            className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer group"
+            className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer"
           >
             {/* Immagine Progetto */}
             <div className="relative h-64 overflow-hidden flex items-center justify-center">

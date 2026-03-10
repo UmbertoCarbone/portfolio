@@ -39,19 +39,17 @@ export default function Section_Skills() {
   return (
     <>
       {/* Titolo centrato */}
-      <section className="w-full mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
+      <section className="mx-auto max-w-7xl pt-20 px-4 text-space-grotesk">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-          <h2 className="text-7xl font-semibold lg:pb-6 pb-24 leading-none tracking-tight text-white/50">
+          <h2 className="text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50">
             My <span className="text-gradient-violet">Skills</span>
           </h2>
         </div>
       </section>
-      {/* Linea bianca a tutta larghezza */}
-      <div></div>
-      <div className="w-full border-t-2 border-b-2 border-gray-300/10 duration-300">
+      <div className="border-t-2 border-b-2 border-gray-300/10">
         {/* Sezione skills centrata */}
-        <section className="mx-auto  text-space-grotesk">
-          <div className="relative py-16  overflow-hidden">
+        <section className="text-space-grotesk">
+          <div className="relative py-16 overflow-hidden">
             {/* Effetto sfumato ai lati */}
             <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-ink to-transparent"></div>
             <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-ink to-transparent"></div>
