@@ -14,10 +14,9 @@ export default function Section_AboutMe() {
       {/* Titolo */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between">
         <h2
-          className="text-7xl font-semibold lg:pb-6 pb-20
-         leading-none tracking-tight text-white/50"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold lg:pb-6 pb-20 leading-none tracking-tight text-white/50 break-words"
         >
-          About <span className="text-gradient-violet">Me</span>
+          About <span className="text-gradient-violet text-3xl sm:text-4xl md:text-5xl lg:text-7xl">Me</span>
         </h2>
       </div>
 
