@@ -1,11 +1,7 @@
 export default function Section_AboutMe() {
   const About = (
     <p className="leading-relaxed py-6 text-white/60">
-      Sviluppatore italiano con forte passione per programmazione e web design,
-      cresciuto con il web fin da giovane età. Attualmente frequento l'ITIS G.
-      Marconi a Verona e progetto soluzioni eleganti, intuitive e orientate
-      all'esperienza utente, con competenze in HTML, CSS, JavaScript e un occhio
-      per design pulito e moderno.
+      in corso...
     </p>
   );
 
