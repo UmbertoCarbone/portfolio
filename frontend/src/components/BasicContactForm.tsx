@@ -14,7 +14,7 @@ const FIELDS = [
   },
   {
     name: "email",
-    label: undefined,
+    label: "EMAIL",
     placeholder: "Email",
     type: "email",
     rows: undefined,
