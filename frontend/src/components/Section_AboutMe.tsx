@@ -1,18 +1,13 @@
 export default function Section_AboutMe() {
-  const About = (
-    <p className="leading-relaxed py-6 text-white/60">
-      in corso...
-    </p>
-  );
-
   return (
     <section className="mx-auto max-w-7xl pt-16 px-4 text-space-grotesk">
       {/* Titolo */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-        <h2
-          className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold lg:pb-6 pb-20 leading-none tracking-tight text-white/50"
-        >
-          About <span className="text-gradient-violet text-5xl sm:text-6xl md:text-6xl lg:text-7xl">Me</span>
+        <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold lg:pb-6 pb-20 leading-none tracking-tight text-white/50">
+          About{" "}
+          <span className="text-gradient-violet text-5xl sm:text-6xl md:text-6xl lg:text-7xl">
+            Me
+          </span>
         </h2>
       </div>
 
@@ -20,7 +15,24 @@ export default function Section_AboutMe() {
       <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-4">
         {/* Testo */}
         <div className="backdrop-blur-xl text-lg bg-neutral-900/80 border-2 border-gray-300/10 rounded-xl px-4 py-3 transition-colors duration-300 hover:border-white/60 flex-1">
-          {About}
+          <p className="leading-relaxed py-6 text-white/60">
+            Mi chiamo Umberto,
+            <br/>
+            <br />
+            ho 29 anni e vengo da Napoli.
+            <br/>
+            <br />
+            Ex professionista con 10 anni di esperienza lavorativa, ho scelto di
+            reinventarmi seguendo la mia passione per l'informatica.
+            <br /> <br/>Ho completato un percorso formativo intensivo sulle
+            tecnologie più attuali del settore.
+            <br />
+            <br/>
+            In un anno ho sviluppato competenze full stack e una mentalità
+            orientata al risultato.
+            <br /><br/> Ora sono pronto a portare quella stessa determinazione in un
+            team tech.
+          </p>
         </div>
 
         {/* Foto */}

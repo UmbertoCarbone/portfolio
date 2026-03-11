@@ -31,13 +31,13 @@ export default function HeroContent() {
 
         {/* Titolo e descrizione */}
         <div className="flex flex-col gap-4">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white opacity-100 leading-tight whitespace-nowrap">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white opacity-100 leading-tight whitespace-nowrap">
             Junior Full Stack <br />
-            <span className="text-violet-500 text-2xl md:text-3xl lg:text-5xl">Developer</span>
+            <span className="text-3xl md:text-5xl lg:text-6xl text-violet-500">
+              Developer
+            </span>
           </h1>
-          <p className="text-base md:text-lg lg:text-xl text-slate-100 opacity-100 max-w-xl mx-auto">
-            Trasformo idee in esperienze digitali moderne e performanti
-          </p>
+          <p className="text-base md:text-lg lg:text-xl text-slate-100 opacity-100 max-w-xl mx-auto"></p>
         </div>
 
         {/* Pulsanti azione */}
