@@ -28,7 +28,6 @@
     "id": 4,
     "title": "CloudGames E-commerce",
     "imgUrl": "/projects/CloudGames.png",
-    "VideoUrl": "/projects/CloudGames.mp4",
     "description": "Piattaforma e-commerce completa per la vendita di videogiochi, dotata di sistema di autenticazione, gestione carrello e database relazionale MySQL.",
     "technologies": ["nodejs", "mysql", "react"],
     "githubUrl": "https://github.com/LucaCiani/CloudGames"
