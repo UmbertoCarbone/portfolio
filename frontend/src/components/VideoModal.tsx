@@ -8,7 +8,12 @@ interface MediaModalProps {
   onClose: () => void;
 }
 
-export default function VideoModal({ url, type, alt, onClose }: MediaModalProps) {
+export default function VideoModal({
+  url,
+  type,
+  alt,
+  onClose,
+}: MediaModalProps) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => {
@@ -17,24 +22,27 @@ export default function VideoModal({ url, type, alt, onClose }: MediaModalProps)
   }, []);
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 "
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80"
       onClick={onClose}
     >
+      {/* Bottone chiusura in alto a destra */}
+      <button
+        className="absolute top-6 right-6 bg-red-900/60 hover:bg-red-700/70 rounded-full p-2 text-white/80 hover:text-white shadow-lg z-50 transition-colors"
+        onClick={onClose}
+        aria-label="Chiudi"
+      >
+        <X size={28} />
+      </button>
       <div
         className="flex flex-col items-center"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative">
-          {/* Bottone chiusura attaccato al media */}
-          <button
-            className="absolute -top-14 left-2 bg-red-900/60 hover:bg-red-700/70 rounded-full p-2 text-white/80 hover:text-white shadow-lg z-20 transition-colors"
-            onClick={onClose}
-            aria-label="Chiudi"
-          >
-            <X size={28} />
-          </button>
+        <div>
           {type === "video" ? (
-            <div className="w-full max-w-5xl rounded-xl border border-white/20 shadow-xl overflow-hidden bg-white/10 backdrop-blur-sm" style={{ aspectRatio: '16/9' }}>
+            <div
+              className="w-full max-w-5xl rounded-xl border border-white/20 shadow-xl overflow-hidden bg-white/10 backdrop-blur-sm"
+              style={{ aspectRatio: "16/9" }}
+            >
               <video
                 src={url}
                 controls
@@ -45,7 +53,7 @@ export default function VideoModal({ url, type, alt, onClose }: MediaModalProps)
           ) : (
             <img
               src={url}
-              alt={alt ?? ''}
+              alt={alt ?? ""}
               className="max-h-[85vh] max-w-full w-auto object-contain rounded-xl"
             />
           )}
