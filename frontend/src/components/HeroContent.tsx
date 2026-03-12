@@ -52,10 +52,11 @@ export default function HeroContent() {
           {/* Download CV */}
           <a
             href="/Curriculum.pdf"
-            download="Umberto_Carbone_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative z-30 px-8 py-3 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-lg font-medium transition-all border border-white/20 hover:border-violet-500/50 flex items-center gap-2"
           >
-            Download CV
+            Visualizza CV
             <FileUser size={20} className="text-violet-400" />
           </a>
         </div>
