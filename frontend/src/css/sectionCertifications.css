@@ -1,0 +1,168 @@
+@reference "tailwindcss";
+
+/* =========================
+   Section Certifications
+   ========================= */
+
+/*
+  cert-section:
+  - Contenitore principale della sezione "My Certifications"
+  - mx-auto max-w-7xl: centra il contenuto e limita la larghezza massima
+  - pt-24 px-4: padding superiore e orizzontale
+  - font Space Grotesk applicato direttamente
+*/
+.cert-section {
+    @apply mx-auto max-w-7xl pt-24 px-4;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  cert-title-row:
+  - Riga dell'intestazione
+  - Su mobile: colonna, su desktop: riga con allineamento in basso
+*/
+.cert-title-row {
+    @apply flex flex-col md:flex-row md:items-end md:justify-between;
+}
+
+/*
+  cert-title:
+  - Titolo "My" in bianco semi-trasparente
+  - Testo grande responsivo, interlinea compatta
+*/
+.cert-title {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50;
+}
+
+/*
+  cert-title-span:
+  - La parola "Certifications" in gradiente viola animato
+  - Proprietà CSS raw perché text-gradient-violet è una classe custom di index.css
+*/
+.cert-title-span {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl;
+    background: linear-gradient(90deg, #c4b5fd 0%, #a78bfa 20%, #8b5cf6 40%, #a78bfa 60%, #c4b5fd 100%);
+    background-size: 400% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-move 1.8s ease-in-out infinite alternate;
+}
+
+/*
+  cert-grid:
+  - Griglia responsiva delle certificazioni
+  - 1 colonna mobile, 2 tablet, 3 desktop
+  - gap-8: spazio tra le card
+*/
+.cert-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 pb-16;
+}
+
+/*
+  cert-card:
+  - Singola card certificazione
+  - rounded-3xl: angoli molto arrotondati
+  - hover:-translate-y-2: si solleva al hover
+  - hover:border-violet-500/80: bordo viola al hover
+  - group: permette gli stili group-hover sui figli
+*/
+.cert-card {
+    @apply relative flex flex-col border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer;
+    
+}
+
+/*
+  cert-card-img-wrapper:
+  - Contenitore dell'immagine della certificazione
+  - h-48: altezza fissa
+  - bg-white/5: sfondo leggermente chiaro se non c'è immagine
+*/
+.cert-card-img-wrapper {
+    @apply relative h-48 overflow-hidden flex items-center justify-center bg-white/5;
+}
+
+/*
+  cert-card-img:
+  - Immagine della certificazione
+  - group-hover:scale-105: si ingrandisce leggermente al hover della card
+*/
+.cert-card-img {
+    @apply w-full h-full object-cover transition-transform duration-500;
+}
+
+/*
+  cert-card-no-img:
+  - Placeholder quando non c'è immagine
+*/
+.cert-card-no-img {
+    @apply w-full h-full flex items-center justify-center text-white/30 text-sm;
+}
+
+/*
+  cert-card-img-overlay:
+  - Overlay scuro con testo "View certificate" al hover
+  - opacity-0 group-hover:opacity-100: compare al hover della card
+*/
+.cert-card-img-overlay {
+    @apply absolute inset-0 bg-black/40 opacity-0  transition-opacity duration-300 flex items-center justify-center;
+}
+
+/*
+  cert-card-img-gradient:
+  - Sfumatura scura dal basso verso l'alto sull'immagine
+  - CSS raw: from-ink/80 è colore custom (#121212)
+*/
+.cert-card-img-gradient {
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(to top, rgba(18, 18, 18, 0.8), transparent);
+}
+
+/*
+  cert-card-body:
+  - Corpo della card con le info della certificazione
+  - flex-1: si espande per riempire lo spazio disponibile
+*/
+.cert-card-body {
+    @apply flex flex-col gap-2 p-5 flex-1;
+}
+
+/*
+  cert-card-name:
+  - Nome della certificazione
+  - leading-tight: interlinea compatta per titoli su più righe
+*/
+.cert-card-name {
+    @apply text-white font-semibold text-lg leading-tight;
+}
+
+/*
+  cert-card-ente:
+  - Nome dell'ente che ha rilasciato la certificazione
+  - text-violet-400: colore viola chiaro
+*/
+.cert-card-ente {
+    @apply text-violet-400 text-sm font-medium;
+}
+
+/*
+  cert-card-date:
+  - Data della certificazione
+  - text-white/40: testo molto trasparente
+*/
+.cert-card-date {
+    @apply text-white/40 text-xs;
+}
+
+/*
+  cert-card-desc:
+  - Descrizione opzionale della certificazione
+  - leading-relaxed: interlinea comoda per la lettura
+*/
+.cert-card-desc {
+    @apply text-white/50 text-sm mt-1 leading-relaxed;
+}

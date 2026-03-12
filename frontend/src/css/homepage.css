@@ -1,0 +1,152 @@
+/* =========================
+   Homepage
+   ========================= */
+
+/* Importa le utility di Tailwind per poter usare @apply */
+@reference "tailwindcss";
+
+/* 
+  homepage-wrapper:
+  - Rende il contenitore principale della homepage:
+    - relative: posizione relativa (serve per posizionare elementi assoluti all'interno)
+    - min-h-screen: altezza minima = altezza schermo
+    - w-full: larghezza 100%
+    - overflow-hidden: nasconde tutto ciò che esce dai bordi
+    - bg-slate-950: sfondo grigio molto scuro
+    - flex items-center: usa flexbox e centra verticalmente il contenuto
+*/
+.homepage-wrapper {
+    @apply relative min-h-screen w-full overflow-hidden bg-slate-950 flex items-center;
+}
+
+/* 
+  homepage-lightning-layer:
+  - Layer per l'effetto fulmine:
+    - absolute: posizione assoluta (si posiziona rispetto al parent relativo)
+    - inset-0: occupa tutto lo spazio del parent (top/right/bottom/left = 0)
+    - z-0: livello di profondità (sotto gli altri elementi)
+    - pointer-events-none: ignora i click del mouse (gli eventi passano sotto)
+*/
+.homepage-lightning-layer {
+    @apply absolute inset-0 z-0 pointer-events-none;
+}
+
+/* =========================
+   HeroContent
+   ========================= */
+
+/*
+  hero-wrapper:
+  - Contenitore principale dell'hero (tutta la sezione)
+  - Posiziona il contenuto a destra su desktop, centrato su mobile
+*/
+.hero-wrapper {
+    @apply relative z-10 w-full min-h-screen pt-32 pb-10 px-6 md:px-12 lg:pr-16 flex flex-col justify-center lg:items-end items-center overflow-x-hidden;
+}
+
+/*
+  hero-card:
+  - Card centrale che contiene foto, titolo e bottoni
+  - Su desktop occupa metà larghezza (lg:w-1/2), su mobile tutta
+*/
+.hero-card {
+    @apply relative z-20 w-full lg:w-1/2 flex flex-col items-center text-center gap-8;
+}
+
+/*
+  hero-photo-wrapper:
+  - Contenitore della foto profilo con bordo animato
+*/
+.hero-photo-wrapper {
+    @apply relative inline-block;
+}
+
+/*
+  hero-photo-size:
+  - Imposta la dimensione del cerchio della foto (128x128px)
+*/
+.hero-photo-size {
+    @apply relative w-32 h-32;
+}
+
+/*
+  hero-photo-inner:
+  - Il cerchio interno che contiene l'immagine
+  - bg-slate-800: sfondo grigio scuro se l'immagine non carica
+  - overflow-hidden: taglia l'immagine al cerchio
+*/
+.hero-photo-inner {
+    @apply absolute inset-1 rounded-full bg-slate-800 flex items-center justify-center overflow-hidden;
+}
+
+/*
+  hero-status-dot:
+  - Il pallino viola in basso a destra della foto
+  - Indica lo stato "online" con un'animazione pulse
+*/
+.hero-status-dot {
+    @apply absolute bottom-1 right-1 w-8 h-8 bg-violet-500 rounded-full flex items-center justify-center border-4 border-slate-950;
+}
+
+/*
+  hero-status-dot-inner:
+  - Il puntino bianco animato all'interno del pallino di stato
+*/
+.hero-status-dot-inner {
+    @apply w-2.5 h-2.5 bg-white rounded-full animate-pulse;
+}
+
+/*
+  hero-title-group:
+  - Contenitore del titolo e del paragrafo descrittivo
+*/
+.hero-title-group {
+    @apply flex flex-col gap-4;
+}
+
+/*
+  hero-title:
+  - Titolo principale: "Junior Full Stack"
+  - Testo grande, bianco, grassetto, senza a capo automatico
+*/
+.hero-title {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight whitespace-nowrap;
+}
+
+/*
+  hero-subtitle:
+  - Sottotitolo: "Developer"
+  - Testo viola, leggermente più piccolo del titolo
+*/
+.hero-subtitle {
+    @apply text-3xl md:text-5xl lg:text-6xl text-violet-500;
+}
+
+/*
+  hero-buttons:
+  - Contenitore dei bottoni azione (Profilo personale + Visualizza CV)
+  - Flex con a capo automatico su schermi piccoli
+*/
+.hero-buttons {
+    @apply flex flex-wrap justify-center gap-4 w-full;
+}
+
+/*
+  hero-btn-primary:
+  - Bottone principale "Profilo personale"
+  - Sfondo viola, si ingrandisce al passaggio del mouse
+*/
+.hero-btn-primary {
+    @apply relative z-30 px-8 py-3 bg-violet-500 hover:bg-violet-600 text-white rounded-lg font-medium transition-all shadow-md hover:scale-105 inline-block;
+}
+
+/*
+  hero-btn-secondary:
+  - Bottone secondario "Visualizza CV"
+  - Sfondo trasparente con effetto vetro e bordo bianco
+*/
+.hero-btn-secondary {
+    @apply relative z-30 px-8 py-3 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white rounded-lg font-medium transition-all border border-white/20 hover:border-violet-500/50 flex items-center gap-2;
+}
+
+

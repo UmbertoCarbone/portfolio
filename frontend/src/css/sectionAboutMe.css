@@ -1,0 +1,102 @@
+@reference "tailwindcss";
+
+/* =========================
+   Section About Me
+   ========================= */
+
+/*
+  about-section:
+  - Contenitore principale della sezione "About Me"
+  - mx-auto max-w-7xl: centra il contenuto e limita la larghezza massima
+  - pt-16 px-4: padding superiore e orizzontale
+  - text-space-grotesk: applica il font Space Grotesk (definito in index.css)
+*/
+.about-section {
+    @apply mx-auto max-w-7xl pt-16 px-4;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  about-title-row:
+  - Riga del titolo "About Me"
+  - Su mobile: colonna, su desktop: riga con allineamento in basso
+*/
+.about-title-row {
+    @apply flex flex-col md:flex-row md:items-end md:justify-between;
+}
+
+/*
+  about-title:
+  - Titolo "About" in bianco semi-trasparente
+  - Dimensione del testo responsiva: aumenta dal mobile al desktop
+  - leading-none tracking-tight: interlinea compatta, lettere vicine
+*/
+.about-title {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold lg:pb-6 pb-20 leading-none tracking-tight text-white/50;
+}
+
+/*
+  about-title-span:
+  - La parola "Me" in gradiente viola animato
+  - text-gradient-violet: classe custom in index.css
+*/
+.about-title-span {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl;
+    background: linear-gradient(90deg, #c4b5fd 0%, #a78bfa 20%, #8b5cf6 40%, #a78bfa 60%, #c4b5fd 100%);
+    background-size: 400% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-move 1.8s ease-in-out infinite alternate;
+}
+
+/*
+  about-content-row:
+  - Riga con testo + foto
+  - Su mobile: colonna, su desktop: riga con allineamento verticale centrato
+*/
+.about-content-row {
+    @apply flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-4;
+}
+
+/*
+  about-text-card:
+  - Card con il testo descrittivo
+  - backdrop-blur-xl: effetto vetro sfocato
+  - bg-neutral-900/80: sfondo scuro semi-trasparente
+  - border-2 border-gray-300/10: bordo grigio trasparente
+  - hover:border-white/60: bordo più visibile al passaggio del mouse
+  - rounded-xl: angoli arrotondati
+  - flex-1: occupa lo spazio disponibile affianco alla foto
+*/
+.about-text-card {
+    @apply backdrop-blur-xl text-lg bg-neutral-900/80 border-2 border-gray-300/10 rounded-xl px-4 py-3 transition-colors duration-300 hover:border-white/60 flex-1;
+}
+
+/*
+  about-text:
+  - Paragrafo del testo descrittivo
+  - leading-relaxed: interlinea comoda per la lettura
+  - py-6: padding verticale
+  - text-white/60: testo bianco semi-trasparente
+*/
+.about-text {
+    @apply leading-relaxed py-6 text-white/60;
+}
+
+/*
+  about-photo:
+  - Foto profilo nella sezione About
+  - w-full max-w-md: larghezza massima media su mobile
+  - lg:w-12: su desktop diventa piccola (si adatta con flex-1)
+  - h-80 lg:h-auto: altezza fissa su mobile, automatica su desktop
+  - rounded-xl mx-auto lg:mx-0: angoli arrotondati, centrata su mobile
+  - flex-1: occupa lo spazio disponibile affianco al testo
+*/
+.about-photo {
+    @apply w-full max-w-md mx-auto lg:mx-0 rounded-xl h-80 lg:h-auto lg:w-12 flex-1;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import VideoModal from "./VideoModal";
 import certificazioniData from "../data/certificazioni.json";
+import "../css/sectionCertifications.css";
 
 interface Certificazione {
   id: number;
@@ -19,23 +20,23 @@ export default function Section_Certifications() {
 
   return (
     <>
-      <section className="mx-auto max-w-7xl pt-24 px-4 text-space-grotesk">
+      <section className="cert-section">
         {/* Titolo sezione */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-          <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50">
+        <div className="cert-title-row">
+          <h2 className="cert-title">
             My{" "}
-            <span className="text-gradient-violet text-5xl sm:text-6xl md:text-6xl lg:text-7xl">
+            <span className="cert-title-span">
               Certifications
             </span>
           </h2>
         </div>
 
         {/* Grid card certificazioni */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 pb-16">
+        <div className="cert-grid">
           {certificazioni.map((cert) => (
             <div
               key={cert.id}
-              className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer group"
+              className="cert-card group"
               onClick={() =>
                 cert.imgUrl
                   ? setModalImg({ url: cert.imgUrl, alt: cert.nome })
@@ -43,39 +44,39 @@ export default function Section_Certifications() {
               }
             >
               {/* Immagine certificazione */}
-              <div className="relative h-48 overflow-hidden flex items-center justify-center bg-white/5">
+              <div className="cert-card-img-wrapper">
                 {cert.imgUrl ? (
                   <img
                     src={cert.imgUrl}
                     alt={cert.nome}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="cert-card-img"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center text-white/30 text-sm">
+                  <div className="cert-card-no-img">
                     No image
                   </div>
                 )}
                 {/* Overlay hover con hint zoom */}
                 {cert.imgUrl && (
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="cert-card-img-overlay">
                     <span className="text-white text-sm font-semibold tracking-wide">
                       View certificate
                     </span>
                   </div>
                 )}
-                <div className="absolute inset-0 bg-linear-to-t from-ink/80 to-transparent pointer-events-none"></div>
+                <div className="cert-card-img-gradient"></div>
               </div>
 
               {/* Info certificazione */}
-              <div className="flex flex-col gap-2 p-5 flex-1">
-                <h3 className="text-white font-semibold text-lg leading-tight">
+              <div className="cert-card-body">
+                <h3 className="cert-card-name">
                   {cert.nome}
                 </h3>
-                <span className="text-violet-400 text-sm font-medium">
+                <span className="cert-card-ente">
                   {cert.ente}
                 </span>
                 {cert.data && (
-                  <span className="text-white/40 text-xs">
+                  <span className="cert-card-date">
                     {new Date(cert.data).toLocaleDateString("it-IT", {
                       year: "numeric",
                       month: "long",
@@ -83,7 +84,7 @@ export default function Section_Certifications() {
                   </span>
                 )}
                 {cert.descrizione && (
-                  <p className="text-white/50 text-sm mt-1 leading-relaxed">
+                  <p className="cert-card-desc">
                     {cert.descrizione}
                   </p>
                 )}

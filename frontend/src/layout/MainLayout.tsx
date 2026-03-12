@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import PauseFrameButton from "../components/PauseFrameButton";
+import "../css/mainLayout.css";
 
 export default function MainLayout() {
   const [isPaused, setIsPaused] = useState(false);
@@ -14,28 +15,23 @@ export default function MainLayout() {
     { to: "/Certificazioni", label: "Certificazioni" }, */
   ];
 
-  const navLinkClass =
-    "relative text-xl text-slate-300 hover:text-white transition-colors py-1 " +
-    "after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 " +
-    "after:w-0 after:h-0.5 after:bg-violet-500 after:transition-all after:duration-300 hover:after:w-full";
-
   return (
     <>
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        whileHover={{ scale: 1.02 }}
+        whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.98 }}
-          className="absolute top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-md "
+        className="navbar-container"
       >
-          <div className="bg-white/5 backdrop-blur-lg border border-white/10 px-4 py-3 rounded-2xl flex items-center justify-between">
+        <div className="navbar-inner">
           {/* Emoji a sinistra */}
           <span></span>
 
           {/* Link al centro */}
-            <div className="flex gap-4">
+          <div className="navbar-links">
             {navLinks.map(({ to, label }) => (
-              <Link key={to} to={to} className={navLinkClass}>
+              <Link key={to} to={to} className="nav-link">
                 {label}
               </Link>
             ))}

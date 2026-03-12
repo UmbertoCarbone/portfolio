@@ -1,4 +1,5 @@
 import { GithubIcon, LinkedinIcon, MailIcon } from "lucide-react";
+import "../css/iconsHero.css";
 
 type IconItem = {
   icon: React.ComponentType<{ size?: number }>;
@@ -26,18 +27,18 @@ const icons: IconItem[] = [
 
 export default function IconsHero() {
   return (
-    <div className="flex justify-center gap-6">
+    <div className="icons-hero-wrapper">
       {icons.map(({ icon: Icon, label, href }) => (
         <a
           key={label}
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="relative w-12 h-12 rounded-full flex items-center justify-center hover:scale-125 transition-all"
+          className="icons-hero-link"
           aria-label={label}
         >
-          <span className="absolute inset-0 rounded-full animate-spin violet-gradient-spin" />
-          <span className="relative w-11 h-11 rounded-full bg-slate-900 flex items-center justify-center text-slate-300 hover:text-violet-400 transition-colors">
+          <span className="icons-hero-spin-border violet-gradient-spin" />
+          <span className="icons-hero-inner">
             <Icon size={20} />
           </span>
         </a>

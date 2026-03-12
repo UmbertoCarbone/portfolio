@@ -1,21 +1,23 @@
+import "../css/sectionAboutMe.css";
+
 export default function Section_AboutMe() {
   return (
-    <section className="mx-auto max-w-7xl pt-16 px-4 text-space-grotesk">
+    <section className="about-section">
       {/* Titolo */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-        <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold lg:pb-6 pb-20 leading-none tracking-tight text-white/50">
+      <div className="about-title-row">
+        <h2 className="about-title">
           About{" "}
-          <span className="text-gradient-violet text-5xl sm:text-6xl md:text-6xl lg:text-7xl">
+          <span className="about-title-span">
             Me
           </span>
         </h2>
       </div>
 
       {/* Contenuto: testo + foto */}
-      <div className="flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-4">
+      <div className="about-content-row">
         {/* Testo */}
-        <div className="backdrop-blur-xl text-lg bg-neutral-900/80 border-2 border-gray-300/10 rounded-xl px-4 py-3 transition-colors duration-300 hover:border-white/60 flex-1">
-          <p className="leading-relaxed py-6 text-white/60">
+        <div className="about-text-card">
+          <p className="about-text">
             Mi chiamo Umberto,
             <br/>
             <br />
@@ -39,7 +41,7 @@ export default function Section_AboutMe() {
         <img
           src="/fotoprofilo.PNG"
           alt="Foto profilo"
-          className="w-full max-w-md mx-auto lg:mx-0 rounded-xl  h-80 lg:h-auto lg:w-12 flex-1"
+          className="about-photo"
         />
       </div>
     </section>

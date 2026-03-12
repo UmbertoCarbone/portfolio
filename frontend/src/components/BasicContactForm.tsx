@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import type { ContactFormData } from "../../services/ContactService";
 import { sendContactEmail } from "../../services/ContactService";
+import "../css/footer.css";
 
 // --- Configurazione campi ---
 const FIELDS = [
@@ -64,9 +65,6 @@ const SANITIZERS: Record<string, RegExp> = {
   message: /[^a-zA-ZÀ-ÿ0-9\s.,!?'\-\n]/g,
 };
 
-const INPUT_CLASS =
-  "bg-white/5 border rounded-xl px-4 py-2 text-white placeholder-white/40 focus:border-violet-500 outline-none transition";
-
 const EMPTY_FORM: ContactFormData = {
   name: "",
   email: "",
@@ -123,14 +121,14 @@ export default function BasicContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden p-8 gap-4 shadow-lg max-w-xl mx-auto w-full"
+      className="contact-form"
     >
-      <h3 className="text-white font-semibold text-2xl mb-2">Contattami</h3>
+      <h3 className="contact-form-title">Contattami</h3>
 
       {FIELDS.map(({ name, placeholder, type, rows, label }) => (
-        <div key={name} className="flex flex-col gap-1">
+        <div key={name} className="contact-field">
           {label && (
-            <span className="text-white/50 text-xs uppercase tracking-widest font-semibold">
+            <span className="contact-label">
               {label}
             </span>
           )}
@@ -142,7 +140,7 @@ export default function BasicContactForm() {
               onChange={(e) => handleChange(name, e.target.value)}
               required
               rows={rows}
-              className={`${INPUT_CLASS} ${errors[name] ? "border-red-500" : "border-white/10"}`}
+              className={`contact-input ${errors[name] ? "border-red-500" : "border-white/10"}`}
             />
           ) : (
             <input
@@ -152,11 +150,11 @@ export default function BasicContactForm() {
               value={form[name as keyof ContactFormData]}
               onChange={(e) => handleChange(name, e.target.value)}
               required
-              className={`${INPUT_CLASS} ${errors[name] ? "border-red-500" : "border-white/10"}`}
+              className={`contact-input ${errors[name] ? "border-red-500" : "border-white/10"}`}
             />
           )}
           {errors[name] && (
-            <span className="text-red-400 text-xs">{errors[name]}</span>
+            <span className="contact-error">{errors[name]}</span>
           )}
         </div>
       ))}
@@ -164,14 +162,14 @@ export default function BasicContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 rounded-xl transition disabled:opacity-60"
+        className="contact-submit"
       >
         {loading ? "Invio..." : "Invia"}
       </button>
 
       {status && (
         <div
-          className={`mt-4 min-h-8 text-center text-lg font-bold transition-colors duration-300 ${status ? "text-violet-400" : "text-transparent"}`}
+          className={`contact-status ${status ? "text-violet-400" : "text-transparent"}`}
         >
           {status || " "}
         </div>

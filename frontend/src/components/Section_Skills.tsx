@@ -1,3 +1,5 @@
+import "../css/sectionSkills.css";
+
 export default function Section_Skills() {
   const icons = [
     { id: 1, class: "devicon-html5-plain", label: "HTML" },
@@ -30,14 +32,9 @@ export default function Section_Skills() {
     return (
       <div className="flex w-max">
         {doubled.map((icon) => (
-          <div
-            key={icon._key}
-            className="flex flex-col items-center justify-center shrink-0 text-5xl md:text-6xl w-[25vw] sm:w-[16.66vw] lg:w-[12.5vw]"
-          >
+          <div key={icon._key} className="skills-icon-item">
             <i className={`${icon.class} colored`}></i>
-            <span className="mt-2 text-sm md:text-lg text-space-grotesk text-white/70">
-              {icon.label}
-            </span>
+            <span className="skills-icon-label">{icon.label}</span>
           </div>
         ))}
       </div>
@@ -46,30 +43,30 @@ export default function Section_Skills() {
 
   return (
     <>
-      {/* Titolo centrato */}
-      <section className="mx-auto max-w-7xl pt-20 px-4 text-space-grotesk">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-          <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50 ">
-            My <span className="text-gradient-violet text-5xl sm:text-6xl md:text-6xl lg:text-7xl">Skills</span>
+      {/* Titolo */}
+      <section className="skills-header">
+        <div className="skills-title-row">
+          <h2 className="skills-title">
+            My <span className="skills-title-span">Skills</span>
           </h2>
         </div>
       </section>
-      <div className="w-full border-t-2 border-b-2 border-gray-300/10">
-        {/* Sezione skills centrata */}
-        <section className="text-space-grotesk">
-          <div className="relative py-16 overflow-hidden">
+
+      <div className="skills-band">
+        <section className="skills-marquee-section">
+          <div className="skills-marquee-wrapper">
             {/* Effetto sfumato ai lati */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-linear-to-r from-ink to-transparent"></div>
-            <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-linear-to-l from-ink to-transparent"></div>
+            <div className="skills-fade-left"></div>
+            <div className="skills-fade-right"></div>
             {/* Prima riga di icone */}
-            <div className="mb-12 flex overflow-hidden">
+            <div className="skills-row-first">
               <div className="animate-loop-left">
                 {renderIconGroup(firstRow)}
               </div>
             </div>
-            <div className="w-full border-t-2  border-gray-300/10 my-14"></div>
+            <div className="skills-divider"></div>
             {/* Seconda riga di icone */}
-            <div className="flex overflow-hidden">
+            <div className="skills-row-second">
               <div className="animate-loop-right">
                 {renderIconGroup(secondRow)}
               </div>

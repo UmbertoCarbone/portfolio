@@ -1,0 +1,65 @@
+@reference "tailwindcss";
+
+/* =========================
+   Video Modal
+   ========================= */
+
+/*
+  modal-backdrop:
+  - Sfondo scuro fisso che copre tutta la schermata
+  - z-50: sopra tutto il resto
+  - bg-black/80: nero semi-trasparente
+*/
+.modal-backdrop {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/80;
+}
+
+/*
+  modal-close-btn:
+  - Bottone X in alto a destra per chiudere la modale
+  - bg-red-900/60 hover:bg-red-700/70: rosso scuro, più chiaro al hover
+  - rounded-full p-2: cerchio con padding
+*/
+.modal-close-btn {
+    @apply absolute top-6 right-6 bg-red-900/60 hover:bg-red-700/70 rounded-full p-2 text-white/80 hover:text-white shadow-lg z-50 transition-colors;
+}
+
+/*
+  modal-content:
+  - Contenitore del media (video o immagine)
+  - stopPropagation: evita che il click chiuda la modale
+*/
+.modal-content {
+    @apply flex flex-col items-center;
+}
+
+/*
+  modal-video-wrapper:
+  - Contenitore del video con rapporto 16:9
+  - max-w-5xl: larghezza massima
+  - backdrop-blur-sm: leggero effetto vetro
+*/
+.modal-video-wrapper {
+    @apply w-full max-w-5xl rounded-xl border border-white/20 shadow-xl overflow-hidden backdrop-blur-sm;
+    background-color: rgb(255 255 255 / 0.1);
+    aspect-ratio: 16/9;
+}
+
+/*
+  modal-video:
+  - Il tag video nella modale
+*/
+.modal-video {
+    @apply w-full h-full object-contain;
+    background: transparent;
+}
+
+/*
+  modal-image:
+  - L'immagine nella modale
+  - max-h-[85vh]: non supera l'85% dell'altezza della finestra
+  - object-contain: mantiene le proporzioni
+*/
+.modal-image {
+    @apply max-h-[85vh] max-w-full w-auto object-contain rounded-xl;
+}

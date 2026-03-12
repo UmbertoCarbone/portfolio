@@ -1,0 +1,150 @@
+@reference "tailwindcss";
+
+/* =========================
+   Section Skills
+   ========================= */
+
+/*
+  skills-header:
+  - Contenitore del titolo "My Skills"
+  - Stesso stile del titolo About Me: centrato, larghezza massima, padding
+*/
+.skills-header {
+    @apply mx-auto max-w-7xl pt-20 px-4;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  skills-title-row:
+  - Riga contenente il titolo
+  - Su mobile: colonna, su desktop: riga con allineamento in basso
+*/
+.skills-title-row {
+    @apply flex flex-col md:flex-row md:items-end md:justify-between;
+}
+
+/*
+  skills-title:
+  - Titolo "My" in bianco semi-trasparente
+  - Testo grande responsivo, senza interruzione di riga
+*/
+.skills-title {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50;
+}
+
+/*
+  skills-title-span:
+  - La parola "Skills" in gradiente viola animato
+  - text-gradient-violet: classe custom in index.css
+*/
+.skills-title-span {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl;
+    background: linear-gradient(90deg, #c4b5fd 0%, #a78bfa 20%, #8b5cf6 40%, #a78bfa 60%, #c4b5fd 100%);
+    background-size: 400% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-move 1.8s ease-in-out infinite alternate;
+}
+
+/*
+  skills-band:
+  - Il contenitore a tutta larghezza con i bordi sopra e sotto
+  - Racchiude le due righe di icone scorrevoli
+*/
+.skills-band {
+    @apply w-full border-t-2 border-b-2 border-gray-300/10;
+}
+
+/*
+  skills-marquee-section:
+  - La sezione interna con le icone animate
+  - text-space-grotesk: font Space Grotesk per le label
+*/
+.skills-marquee-section {
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  skills-marquee-wrapper:
+  - Il div con padding verticale e overflow nascosto
+  - Contiene le due righe di icone + gli effetti sfumatura ai lati
+*/
+.skills-marquee-wrapper {
+    @apply relative py-16 overflow-hidden;
+}
+
+/*
+  skills-fade-left:
+  - Effetto sfumatura sul lato sinistro
+  - Nasconde le icone che escono a sinistra con un gradiente trasparente
+*/
+.skills-fade-left {
+    @apply pointer-events-none absolute inset-y-0 left-0 z-10 w-20;
+    background: linear-gradient(to right, #121212, transparent);
+}
+
+/*
+  skills-fade-right:
+  - Effetto sfumatura sul lato destro
+  - Nasconde le icone che escono a destra con un gradiente trasparente
+*/
+.skills-fade-right {
+    @apply pointer-events-none absolute inset-y-0 right-0 z-10 w-20;
+    background: linear-gradient(to left, #121212, transparent);
+}
+
+/*
+  skills-row-first:
+  - Contenitore della prima riga di icone (scorre a sinistra)
+  - mb-12: margine sotto per separare dalla linea divisoria
+*/
+.skills-row-first {
+    @apply mb-12 flex overflow-hidden;
+}
+
+/*
+  skills-row-second:
+  - Contenitore della seconda riga di icone (scorre a destra)
+*/
+.skills-row-second {
+    @apply flex overflow-hidden;
+}
+
+/*
+  skills-divider:
+  - La linea divisoria orizzontale tra le due righe di icone
+*/
+.skills-divider {
+    @apply w-full border-t-2 border-gray-300/10 my-14;
+}
+
+/*
+  skills-icon-item:
+  - Il singolo elemento icona con label sotto
+  - shrink-0: non si restringe mai
+  - text-5xl md:text-6xl: dimensione dell'icona responsiva
+  - Larghezza responsiva: 25% mobile, 16% tablet, 12.5% desktop
+*/
+.skills-icon-item {
+    @apply flex flex-col items-center justify-center shrink-0 text-5xl md:text-6xl w-[25vw] sm:w-[16.66vw] lg:w-[12.5vw];
+}
+
+/*
+  skills-icon-label:
+  - La label testuale sotto ogni icona (es: "React", "TypeScript")
+  - mt-2: margine sopra per distaccarsi dall'icona
+  - text-white/70: testo bianco semi-trasparente
+*/
+.skills-icon-label {
+    @apply mt-2 text-sm md:text-lg text-white/70;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

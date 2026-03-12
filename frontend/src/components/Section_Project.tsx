@@ -2,6 +2,7 @@ import { useState } from "react";
 import VideoModal from "./VideoModal";
 import { Globe, Download, Play } from "lucide-react";
 import progettiData from "../data/progetti.json";
+import "../css/sectionProject.css";
 
 interface Progetto {
   id: number;
@@ -24,29 +25,29 @@ export default function Section_Project() {
   } | null>(null);
 
   return (
-    <section className="mx-auto max-w-7xl pt-20 px-4 text-space-grotesk">
+    <section className="project-section">
       {/* Intestazione Sezione */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-        <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50 ">
-          My <span className="text-gradient-violet text-5xl sm:text-6xl md:text-6xl lg:text-7xl">Projects</span>
+      <div className="project-title-row">
+        <h2 className="project-title">
+          My <span className="project-title-span">Projects</span>
         </h2>
       </div>
 
       {/* Grid Progetti */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 px-4 md:px-8">
+      <div className="project-grid">
         {progetti.map((progetto) => (
           <div
             key={progetto.id}
-            className="relative flex flex-col bg-white/2 border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer"
+            className="project-card"
           >
             {/* Immagine Progetto */}
-            <div className="relative h-64 overflow-hidden flex items-center justify-center">
+            <div className="project-card-img-wrapper">
               {progetto.imgUrl ? (
                 <>
                   <img
                     src={progetto.imgUrl}
                     alt={progetto.title}
-                    className="w-full h-full object-cover cursor-zoom-in"
+                    className="project-card-img"
                     onClick={() =>
                       setModalMedia({
                         url: progetto.imgUrl,
@@ -57,7 +58,7 @@ export default function Section_Project() {
                   />
                   {progetto.VideoUrl && (
                     <button
-                      className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10"
+                      className="project-card-video-overlay"
                       onClick={() =>
                         setModalMedia({
                           url: progetto.VideoUrl!,
@@ -65,7 +66,7 @@ export default function Section_Project() {
                         })
                       }
                     >
-                      <div className="flex items-center justify-center w-14 h-14 rounded-full bg-white/20 border-2 border-white backdrop-blur-sm">
+                      <div className="project-card-play-btn">
                         <Play
                           size={28}
                           className="text-white fill-white ml-1"
@@ -88,25 +89,25 @@ export default function Section_Project() {
                   Nessuna immagine o video
                 </div>
               )}
-              <div className="absolute inset-0 bg-linear-to-t from-ink/80 to-transparent pointer-events-none"></div>
+              <div className="project-card-gradient"></div>
             </div>
 
             {/* Contenuto Card */}
-            <div className="p-4 flex flex-col grow">
-              <h3 className="text-2xl font-space font-bold text-white mb-3">
+            <div className="project-card-body">
+              <h3 className="project-card-title font-space">
                 {progetto.title}
               </h3>
 
-              <p className="text-white/60 text-sm leading-relaxed mb-6 grow">
+              <p className="project-card-desc">
                 {progetto.description}
               </p>
 
               {/* Tecnologie (Chip stile Alessio Davi) */}
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="project-card-techs">
                 {progetto.technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/80"
+                    className="project-card-chip"
                   >
                     {tech}
                   </span>
@@ -114,13 +115,13 @@ export default function Section_Project() {
               </div>
 
               {/* Footer Card: Link */}
-              <div className="flex items-center justify-between pt-6 border-t border-white/5">
+              <div className="project-card-footer">
                 {progetto.githubUrl ? (
                   <a
                     href={progetto.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-white/50 hover:text-white transition-colors"
+                    className="project-card-link"
                   >
                     <i className="devicon-github-original text-2xl"></i>
                     <span className="text-sm font-space">Link Github</span>
@@ -134,7 +135,7 @@ export default function Section_Project() {
                     href={progetto.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-white/50 hover:text-white transition-colors"
+                    className="project-card-link"
                   >
                     <Globe size={22} />
                     <span className="text-sm font-space">Sito web</span>
@@ -148,7 +149,7 @@ export default function Section_Project() {
                     href={progetto.download}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-white/50 hover:text-white transition-colors"
+                    className="project-card-link"
                   >
                     <Download size={22} />
                     <span className="text-sm font-space">Download</span>

@@ -1,0 +1,53 @@
+@reference "tailwindcss";
+
+/* =========================
+   IconsHero
+   ========================= */
+
+/*
+  icons-hero-wrapper:
+  - Contenitore delle icone social
+  - flex: dispone le icone in riga
+  - justify-center: centra le icone orizzontalmente
+  - gap-6: spazio tra le icone
+*/
+.icons-hero-wrapper {
+    @apply flex justify-center gap-6;
+}
+
+/*
+  icons-hero-link:
+  - Il singolo link/icona (cerchio cliccabile)
+  - relative: serve per posizionare il bordo animato all'interno
+  - w-12 h-12: dimensione del cerchio (48x48px)
+  - rounded-full: cerchio perfetto
+  - flex items-center justify-center: centra l'icona dentro il cerchio
+  - hover:scale-125: si ingrandisce al passaggio del mouse
+  - transition-all: tutte le animazioni fluide
+*/
+.icons-hero-link {
+    @apply relative w-12 h-12 rounded-full flex items-center justify-center hover:scale-125 transition-all;
+}
+
+/*
+  icons-hero-inner:
+  - Il cerchio interno che contiene l'icona vera e propria
+  - bg-slate-900: sfondo grigio scuro
+  - text-slate-300: colore icona grigio chiaro
+  - hover:text-violet-400: colore viola al passaggio del mouse
+*/
+.icons-hero-inner {
+    @apply relative w-11 h-11 rounded-full bg-slate-900 flex items-center justify-center text-slate-300 hover:text-violet-400 transition-colors;
+}
+
+/*
+  icons-hero-spin-border:
+  - Il bordo animato che gira attorno all'icona
+  - absolute inset-0: copre tutto il link
+  - rounded-full: forma circolare
+  - animate-spin: rotazione continua
+  - violet-gradient-spin: gradiente viola (definito in index.css)
+*/
+.icons-hero-spin-border {
+    @apply absolute inset-0 rounded-full animate-spin;
+}

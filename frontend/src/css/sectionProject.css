@@ -1,0 +1,188 @@
+@reference "tailwindcss";
+
+/* =========================
+   Section Project
+   ========================= */
+
+/*
+  project-section:
+  - Contenitore principale della sezione "My Projects"
+  - mx-auto max-w-7xl: centra il contenuto e limita la larghezza massima
+  - pt-20 px-4: padding superiore e orizzontale
+  - font Space Grotesk applicato direttamente (classe custom da index.css)
+*/
+.project-section {
+    @apply mx-auto max-w-7xl pt-20 px-4;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  project-title-row:
+  - Riga dell'intestazione
+  - Su mobile: colonna, su desktop: riga con allineamento in basso
+*/
+.project-title-row {
+    @apply flex flex-col md:flex-row md:items-end md:justify-between;
+}
+
+/*
+  project-title:
+  - Titolo "My" in bianco semi-trasparente
+  - Testo grande responsivo, interlinea compatta
+*/
+.project-title {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50;
+}
+
+/*
+  project-title-span:
+  - La parola "Projects" in gradiente viola animato
+  - Proprietà CSS raw perché text-gradient-violet è una classe custom di index.css
+*/
+.project-title-span {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl;
+    background: linear-gradient(90deg, #c4b5fd 0%, #a78bfa 20%, #8b5cf6 40%, #a78bfa 60%, #c4b5fd 100%);
+    background-size: 400% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-move 1.8s ease-in-out infinite alternate;
+}
+
+/*
+  project-grid:
+  - Griglia responsiva dei progetti
+  - 1 colonna mobile, 2 tablet, 3 desktop
+  - gap-16: spazio generoso tra le card
+*/
+.project-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 px-4 md:px-8;
+}
+
+/*
+  project-card:
+  - Singola card progetto
+  - rounded-3xl: angoli molto arrotondati
+  - hover:-translate-y-2: si solleva al passaggio del mouse
+  - hover:border-violet-500/80: bordo viola al hover
+*/
+.project-card {
+    @apply relative flex flex-col border border-white/10 rounded-3xl overflow-hidden hover:border-violet-500/80 hover:-translate-y-2 transition-all duration-500 cursor-pointer;
+    background-color: rgb(255 255 255 / 0.02);
+}
+
+/*
+  project-card-img-wrapper:
+  - Contenitore dell'immagine/video in cima alla card
+  - h-64: altezza fissa
+  - overflow-hidden: nasconde ciò che esce
+*/
+.project-card-img-wrapper {
+    @apply relative h-64 overflow-hidden flex items-center justify-center;
+}
+
+/*
+  project-card-img:
+  - Immagine del progetto
+  - object-cover: riempie il contenitore senza distorcere
+*/
+.project-card-img {
+    @apply w-full h-full object-cover cursor-zoom-in;
+}
+
+/*
+  project-card-video-overlay:
+  - Overlay scuro con pulsante play, visibile solo al hover
+  - opacity-0 hover:opacity-100: compare al passaggio del mouse
+*/
+.project-card-video-overlay {
+    @apply absolute inset-0 flex flex-col items-center justify-center gap-2 bg-black/40 opacity-0 hover:opacity-100 transition-opacity duration-300 z-10;
+}
+
+/*
+  project-card-play-btn:
+  - Cerchio con icona play
+  - backdrop-blur-sm: leggero effetto vetro
+*/
+.project-card-play-btn {
+    @apply flex items-center justify-center w-14 h-14 rounded-full bg-white/20 border-2 border-white backdrop-blur-sm;
+}
+
+/*
+  project-card-gradient:
+  - Sfumatura scura dal basso verso l'alto sull'immagine
+  - CSS raw: from-ink/80 è colore custom (#121212)
+*/
+.project-card-gradient {
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(to top, rgba(18, 18, 18, 0.8), transparent);
+}
+
+/*
+  project-card-body:
+  - Corpo della card con il testo
+  - grow: si espande per riempire lo spazio disponibile
+*/
+.project-card-body {
+    @apply p-4 flex flex-col grow;
+}
+
+/*
+  project-card-title:
+  - Titolo del progetto nella card
+  - text-2xl font-bold: testo grande in grassetto
+*/
+.project-card-title {
+    @apply text-2xl font-bold text-white mb-3;
+}
+
+/*
+  project-card-desc:
+  - Descrizione del progetto
+  - grow: occupa lo spazio rimanente (spinge il footer in basso)
+*/
+.project-card-desc {
+    @apply text-white/60 text-sm leading-relaxed mb-6 grow;
+}
+
+/*
+  project-card-techs:
+  - Contenitore dei chip tecnologie
+  - flex-wrap: va a capo se non c'è spazio
+*/
+.project-card-techs {
+    @apply flex flex-wrap gap-2 mb-8;
+}
+
+/*
+  project-card-chip:
+  - Singolo chip tecnologia (es: "React", "TypeScript")
+  - text-[10px] uppercase tracking-widest: testo piccolo in maiuscolo spaziato
+  - rounded-full: forma pillola
+*/
+.project-card-chip {
+    @apply text-[10px] uppercase tracking-widest px-3 py-1 bg-white/5 border border-white/10 rounded-full text-white/80;
+}
+
+/*
+  project-card-footer:
+  - Footer della card con i link (GitHub, sito, download)
+  - justify-between: distribuisce i link ai lati
+  - border-t: linea separatrice sopra
+*/
+.project-card-footer {
+    @apply flex items-center justify-between pt-6 border-t border-white/5;
+}
+
+/*
+  project-card-link:
+  - Singolo link nel footer della card
+  - text-white/50 hover:text-white: diventa bianco pieno al hover
+*/
+.project-card-link {
+    @apply flex items-center gap-2 text-white/50 hover:text-white transition-colors;
+}

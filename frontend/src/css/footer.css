@@ -1,0 +1,190 @@
+@reference "tailwindcss";
+
+/* =========================================
+   Footer (Footer.tsx + InfoFooter.tsx + BasicContactForm.tsx)
+   ========================================= */
+
+
+/* -------------------------
+   Footer.tsx
+   ------------------------- */
+
+/*
+  footer-section:
+  - Contenitore principale del footer
+  - mx-auto max-w-7xl: centra e limita la larghezza
+  - px-4 py-20: padding orizzontale e verticale generoso
+  - font Space Grotesk applicato direttamente
+*/
+.footer-section {
+    @apply mx-auto max-w-7xl px-4 py-20;
+    font-family: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+  footer-inner:
+  - Layout a due colonne su desktop, una su mobile
+  - items-center text-center su mobile, items-start text-left su desktop
+*/
+.footer-inner {
+    @apply flex flex-col lg:flex-row gap-12 lg:gap-16 items-center text-center lg:items-start lg:text-left;
+}
+
+/*
+  footer-form-col:
+  - Colonna destra che contiene il form di contatto
+  - flex-1 w-full: occupa lo spazio disponibile
+*/
+.footer-form-col {
+    @apply flex-1 w-full;
+}
+
+
+/* -------------------------
+   InfoFooter.tsx
+   ------------------------- */
+
+/*
+  info-footer-wrapper:
+  - Contenitore principale della colonna sinistra del footer
+  - flex-1: occupa metà dello spazio nel layout a due colonne
+*/
+.info-footer-wrapper {
+    @apply flex-1 flex flex-col gap-4;
+}
+
+/*
+  info-footer-title-row:
+  - Riga del titolo "Contact Me"
+  - Centrata orizzontalmente
+*/
+.info-footer-title-row {
+    @apply flex flex-row items-center justify-center gap-2;
+}
+
+/*
+  info-footer-title:
+  - Titolo "Contact" in bianco semi-trasparente
+  - Testo grande responsivo, interlinea compatta
+*/
+.info-footer-title {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-semibold pb-20 leading-none tracking-tight text-white/50;
+}
+
+/*
+  info-footer-title-span:
+  - La parola "Me" in gradiente viola animato
+  - Proprietà CSS raw: text-gradient-violet è una classe custom di index.css
+*/
+.info-footer-title-span {
+    @apply text-5xl sm:text-6xl md:text-6xl lg:text-7xl;
+    background: linear-gradient(90deg, #c4b5fd 0%, #a78bfa 20%, #8b5cf6 40%, #a78bfa 60%, #c4b5fd 100%);
+    background-size: 400% 100%;
+    background-position: 0% 0%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-move 1.8s ease-in-out infinite alternate;
+}
+
+/*
+  info-footer-body:
+  - Contenitore del testo descrittivo e delle icone social
+  - gap-16: spazio generoso tra testo e icone
+*/
+.info-footer-body {
+    @apply flex flex-col items-center justify-center w-full gap-16;
+}
+
+/*
+  info-footer-text:
+  - Paragrafo descrittivo nel footer
+  - text-white/40: testo molto trasparente
+  - max-w-xl: larghezza massima per leggibilità
+*/
+.info-footer-text {
+    @apply text-white/40 text-lg leading-relaxed text-center max-w-xl;
+}
+
+
+/* -------------------------
+   BasicContactForm.tsx
+   ------------------------- */
+
+/*
+  contact-form:
+  - Card contenitore del form
+  - rounded-3xl: angoli molto arrotondati
+  - p-8 gap-4: padding interno e spazio tra campi
+  - max-w-xl mx-auto: centrato con larghezza massima
+*/
+.contact-form {
+    @apply relative flex flex-col border border-white/10 rounded-3xl overflow-hidden p-8 gap-4 shadow-lg max-w-xl mx-auto w-full;
+    background-color: rgb(255 255 255 / 0.02);
+}
+
+/*
+  contact-form-title:
+  - Titolo "Contattami" nel form
+*/
+.contact-form-title {
+    @apply text-white font-semibold text-2xl mb-2;
+}
+
+/*
+  contact-field:
+  - Contenitore di ogni singolo campo (label + input/textarea)
+*/
+.contact-field {
+    @apply flex flex-col gap-1;
+}
+
+/*
+  contact-label:
+  - Etichetta sopra ogni campo
+  - uppercase tracking-widest: stile compatto tutto maiuscolo
+*/
+.contact-label {
+    @apply text-white/50 text-xs uppercase tracking-widest font-semibold;
+}
+
+/*
+  contact-input:
+  - Stile base di input e textarea
+  - bg-white/5: sfondo leggermente chiaro
+  - focus:border-violet-500: bordo viola al focus
+  - Il bordo dinamico (errore/normale) viene aggiunto nel JSX
+*/
+.contact-input {
+    @apply bg-white/5 border rounded-xl px-4 py-2 text-white placeholder-white/40 focus:border-violet-500 outline-none transition;
+}
+
+/*
+  contact-error:
+  - Messaggio di errore di validazione sotto il campo
+*/
+.contact-error {
+    @apply text-red-400 text-xs;
+}
+
+/*
+  contact-submit:
+  - Bottone di invio del form
+  - bg-violet-600 hover:bg-violet-700: viola con hover più scuro
+  - disabled:opacity-60: opacità ridotta quando disabilitato
+*/
+.contact-submit {
+    @apply mt-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 rounded-xl transition disabled:opacity-60;
+}
+
+/*
+  contact-status:
+  - Messaggio di stato dopo l'invio (successo/errore)
+  - Il colore del testo viene aggiunto dinamicamente nel JSX
+*/
+.contact-status {
+    @apply mt-4 min-h-8 text-center text-lg font-bold transition-colors duration-300;
+}
