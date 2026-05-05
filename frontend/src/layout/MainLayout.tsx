@@ -20,8 +20,8 @@ export default function MainLayout() {
       <motion.nav
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        whileHover={{ scale: 1.04 }}
-        whileTap={{ scale: 0.98 }}
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.99 }}
         className="navbar-container"
       >
         <div className="navbar-inner">
